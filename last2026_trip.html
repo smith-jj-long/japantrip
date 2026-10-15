@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html lang="zh-HK" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#F4F5F7">
+    <title>⛩️ 日本休閒之旅：廣島 ‧ 岡山 ‧ 大阪 7日遊</title>
+    <style>
+        :root {
+            /* Base Light Theme - High Contrast & Apple HIG Inspired Palette */
+            --bg-base: #F2F4F8;
+            --bg-surface: #FFFFFF;
+            --bg-surface-glass: rgba(255, 255, 255, 0.88);
+            --bg-surface-inner: rgba(255, 255, 255, 0.82);
+            --text-main: #0F172A;      /* 極深藍黑，確保100%清晰 */
+            --text-secondary: #1E293B; /* 深炭黑，絕不使用淺灰 */
+            --text-label: #334155;     /* 清晰次級標籤文字 */
+            --primary: #1B5E3A;        /* 深抹茶綠 */
+            --primary-strong: #124026;
+            --primary-soft: #DCFCE7;
+            --accent: #C2410C;         /* 嚴島朱紅 */
+            --accent-soft: #FFEDD5;
+            --danger: #DC2626;
+            --danger-soft: #FEE2E2;
+            --border: #CBD5E1;
+            
+            /* Distinct Tab Card Palettes (Light Mode - Harmonized Contrast) */
+            --card-overview-bg: #F3EFFD;
+            --card-overview-border: #C4B5FD;
+            --card-overview-accent: #5B21B6;
+
+            --card-itinerary-bg: #E6F6F8;
+            --card-itinerary-border: #99DCE6;
+            --card-itinerary-accent: #0E5A6A;
+
+            --card-prep-bg: #E8F7EE;
+            --card-prep-border: #9EE0B5;
+            --card-prep-accent: #166534;
+
+            --card-budget-bg: #FDF0EB;
+            --card-budget-border: #F6C1AE;
+            --card-budget-accent: #9A3412;
+
+            --card-tools-bg: #EAF1FD;
+            --card-tools-border: #AEC8F8;
+            --card-tools-accent: #1E40AF;
+
+            /* Layout & UI Tokens */
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --transition: all 0.22s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --safe-area-inset-top: env(safe-area-inset-top, 0px);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom, 12px);
+            --nav-height: calc(60px + var(--safe-area-inset-bottom));
+        }
+
+        /* Dark Mode - High Contrast, Zero Green-on-Green Clash */
+        [data-theme="dark"] {
+            --bg-base: #090D16;
+            --bg-surface: #151D2C;
+            --bg-surface-glass: rgba(21, 29, 44, 0.88);
+            --bg-surface-inner: rgba(15, 23, 42, 0.72);
+            --text-main: #F8FAFC;      /* 純淨亮白 */
+            --text-secondary: #E2E8F0; /* 高亮銀白 */
+            --text-label: #CBD5E1;
+            --primary: #6EE7B7;        /* 高亮薄荷翠綠 */
+            --primary-strong: #A7F3D0;
+            --primary-soft: #1E293B;
+            --accent: #FDBA74;         /* 暖金橘 */
+            --accent-soft: #3B1D16;
+            --danger: #FCA5A5;
+            --danger-soft: #3F1518;
+            --border: #334155;
+
+            /* Distinct Tab Card Palettes (Dark Mode - Rich Deep Tones + Bright Borders) */
+            --card-overview-bg: #1F1934;
+            --card-overview-border: #6D54A3;
+            --card-overview-accent: #DDD6FE;
+
+            --card-itinerary-bg: #11262E;
+            --card-itinerary-border: #347082;
+            --card-itinerary-accent: #A5F3FC;
+
+            --card-prep-bg: #11281E;
+            --card-prep-border: #347555;
+            --card-prep-accent: #A7F3D0;
+
+            --card-budget-bg: #2E1A15;
+            --card-budget-border: #854937;
+            --card-budget-accent: #FDBA74;
+
+            --card-tools-bg: #142238;
+            --card-tools-border: #3C629E;
+            --card-tools-accent: #BFDBFE;
+
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.45);
+            --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.65);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.58;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: calc(var(--nav-height) + 20px);
+            overflow-x: hidden;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        ul, ol { list-style: none; }
+        button, input, select, textarea { font-family: inherit; color: inherit; }
+        button { cursor: pointer; border: none; background: none; touch-action: manipulation; }
+
+        /* Per-Section Card Colour System */
+        #view-overview .card {
+            background-color: var(--card-overview-bg);
+            border-color: var(--card-overview-border);
+        }
+        #view-overview .section-badge {
+            background-color: var(--card-overview-accent);
+            color: #FFFFFF;
+        }
+        [data-theme="dark"] #view-overview .section-badge {
+            color: #1E1B4B;
+        }
+
+        #view-itinerary .card {
+            background-color: var(--card-itinerary-bg);
+            border-color: var(--card-itinerary-border);
+        }
+        #view-itinerary .time-badge {
+            background-color: var(--card-itinerary-accent);
+            color: #FFFFFF;
+        }
+        [data-theme="dark"] #view-itinerary .time-badge {
+            color: #082F49;
+        }
+
+        #view-prep .card {
+            background-color: var(--card-prep-bg);
+            border-color: var(--card-prep-border);
+        }
+
+        #view-budget .card {
+            background-color: var(--card-budget-bg);
+            border-color: var(--card-budget-border);
+        }
+
+        #view-tools .card {
+            background-color: var(--card-tools-bg);
+            border-color: var(--card-tools-border);
+        }
+
+        /* Layout & Typography Utilities */
+        .container { max-width: 840px; margin: 0 auto; padding: 0 14px; }
+        .section-header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: nowrap; gap: 0.5rem; margin: 1.05rem 0 0.75rem;
+        }
+        .section-title {
+            font-size: 1.15rem; font-weight: 800; color: var(--text-main);
+            display: flex; align-items: center; gap: 0.4rem;
+            min-width: 0; flex: 1; line-height: 1.3;
+        }
+        .text-secondary { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; }
+        .text-sm { font-size: 0.84rem; }
+        .text-xs { font-size: 0.76rem; }
+        .font-bold { font-weight: 800; }
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
+        @media (min-width: 700px) { .grid-2 { grid-template-columns: repeat(2, 1fr); gap: 1.1rem; } }
+        .mt-1 { margin-top: 0.35rem; }
+        .mt-2 { margin-top: 0.7rem; }
+        .mt-3 { margin-top: 1rem; }
+        .mt-4 { margin-top: 1.3rem; }
+        .mb-1 { margin-bottom: 0.35rem; }
+        .mb-2 { margin-bottom: 0.7rem; }
+        .mb-3 { margin-bottom: 1rem; }
+
+        .icon { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: -3px; flex-shrink: 0; }
+        .icon-sm { width: 14px; height: 14px; fill: currentColor; display: inline-block; vertical-align: -2px; flex-shrink: 0; }
+
+        .card {
+            border-radius: var(--radius-md);
+            padding: 1rem 1.05rem;
+            box-shadow: var(--shadow-sm);
+            border: 1.5px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+        }
+        .card-inner {
+            background: var(--bg-surface-inner);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.7rem 0.85rem;
+            margin-top: 0.55rem;
+            display: block;
+        }
+        /* Strictly keep card title and right-side label on the same row */
+        .card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: nowrap; gap: 0.5rem; margin-bottom: 0.5rem;
+        }
+        .card-header h3, .card-header h4 {
+            font-size: 1rem; line-height: 1.35; flex: 1; min-width: 0;
+        }
+        /* Strictly prevent right-side badges, actions, and controls from wrapping to a second line on iPhone Safari */
+        .card-header > *:last-child,
+        .section-header > *:last-child,
+        .day-banner > *:last-child,
+        .check-title-row > *:last-child,
+        .place-item-top > *:last-child,
+        .place-region-header > *:last-child,
+        .expense-item > *:last-child {
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        /* High-Contrast Map & External Links (Never split across lines awkwardly) */
+        .map-link {
+            display: inline-flex; align-items: center; gap: 3px;
+            background: var(--bg-surface);
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.82rem;
+            line-height: 1.3;
+            padding: 2px 7px;
+            border-radius: 7px;
+            border: 1.5px solid var(--primary);
+            margin: 2px 2px;
+            white-space: nowrap;
+            max-width: 100%;
+            vertical-align: baseline;
+            transition: var(--transition);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .map-link:hover, .map-link:active {
+            background: var(--primary);
+            color: #FFFFFF;
+        }
+        [data-theme="dark"] .map-link {
+            background: #0F172A;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        [data-theme="dark"] .map-link:hover, [data-theme="dark"] .map-link:active {
+            background: var(--primary);
+            color: #0F172A;
+        }
+
+        .copy-btn {
+            display: inline-flex; align-items: center; gap: 3px;
+            background: var(--bg-surface);
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.78rem;
+            line-height: 1.3;
+            padding: 2px 7px;
+            border-radius: 7px;
+            border: 1px solid var(--border);
+            margin: 2px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .copy-btn:active { transform: scale(0.95); }
+
+        /* Compact iOS-First Hero Banner (Saves ~45% vertical screen space on iPhone Safari) */
+        .hero {
+            background: var(--bg-surface);
+            padding: calc(var(--safe-area-inset-top) + 0.6rem) 0 0.65rem;
+            border-bottom-left-radius: var(--radius-lg);
+            border-bottom-right-radius: var(--radius-lg);
+            border-bottom: 1.5px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 0.65rem;
+        }
+        .hero-top {
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 0.35rem; margin-bottom: 0.35rem; flex-wrap: nowrap;
+        }
+        .hero-actions { display: flex; gap: 0.3rem; align-items: center; flex-shrink: 0; }
+        .hero h1 {
+            font-size: clamp(1.15rem, 4.4vw, 1.5rem);
+            font-weight: 900; line-height: 1.22;
+            color: var(--text-main); margin-bottom: 0.15rem; letter-spacing: -0.02em;
+        }
+        .hero .subtitle {
+            font-size: 0.79rem; color: var(--text-secondary);
+            margin-bottom: 0.45rem; font-weight: 600; line-height: 1.35;
+        }
+        /* Single-line horizontal swipeable chips on mobile so Hero never expands vertically */
+        .chips-container {
+            display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 0.4rem;
+            padding-bottom: 2px; scrollbar-width: none; -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .chips-container::-webkit-scrollbar { display: none; }
+        @media (min-width: 768px) {
+            .hero { padding: 1.15rem 0 1.2rem; margin-bottom: 1.1rem; }
+            .chips-container { flex-wrap: wrap; overflow-x: visible; }
+        }
+        .chip {
+            background: var(--bg-base);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 0.22rem 0.62rem;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            white-space: nowrap;
+            flex-shrink: 0;
+            display: inline-flex; align-items: center; gap: 0.3rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.3rem;
+            padding: 0.4rem 0.75rem; border-radius: 10px; font-size: 0.8rem; font-weight: 800;
+            background: var(--bg-surface); color: var(--text-main);
+            border: 1.5px solid var(--border); transition: var(--transition);
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .btn:active { transform: scale(0.96); }
+        .btn-primary {
+            background: var(--primary); color: #FFFFFF; border-color: var(--primary);
+        }
+        [data-theme="dark"] .btn-primary {
+            background: var(--primary); color: #0B0F17; border-color: var(--primary);
+        }
+        .btn-danger {
+            background: var(--danger-soft); color: var(--danger); border-color: var(--danger);
+        }
+
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--bg-surface-glass);
+            -webkit-backdrop-filter: saturate(180%) blur(16px);
+            backdrop-filter: saturate(180%) blur(16px);
+            border-top: 1.5px solid var(--border);
+            display: flex; justify-content: space-around; align-items: center;
+            padding-bottom: var(--safe-area-inset-bottom);
+            height: var(--nav-height); z-index: 1000;
+            box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+        }
+        .nav-item {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: var(--text-secondary); padding: 0.35rem 0.15rem; flex: 1;
+            transition: var(--transition); font-weight: 700; white-space: nowrap;
+        }
+        .nav-item .icon { width: 20px; height: 20px; margin-bottom: 2px; }
+        .nav-item span { font-size: 0.7rem; font-weight: 800; }
+        .nav-item.active {
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+        .nav-item.active span { text-decoration: underline; text-underline-offset: 3px; }
+
+        @media (min-width: 768px) {
+            .bottom-nav {
+                top: 0; bottom: auto; height: 60px; padding-bottom: 0;
+                justify-content: center; gap: 1.25rem;
+                border-bottom: 1.5px solid var(--border); border-top: none;
+            }
+            body { padding-bottom: 40px; padding-top: 72px; }
+            .nav-item { flex-direction: row; gap: 0.4rem; flex: none; padding: 0.45rem 0.9rem; border-radius: 10px; }
+            .nav-item .icon { margin-bottom: 0; }
+            .nav-item span { font-size: 0.88rem; }
+        }
+
+        /* Sticky Day Scroll Filters (Frozen on Scroll & Auto-Centered) */
+        .sticky-day-bar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 950;
+            background: var(--bg-surface-glass);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            backdrop-filter: saturate(180%) blur(14px);
+            margin: 0 -14px 0.85rem;
+            padding: 0.5rem 14px;
+            border-bottom: 1.5px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: background-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        @media (min-width: 768px) {
+            .sticky-day-bar {
+                top: 60px;
+                margin: 0 0 1rem;
+                border-radius: 0 0 var(--radius-md) var(--radius-md);
+            }
+        }
+        .scroll-filters {
+            display: flex; overflow-x: auto; gap: 0.45rem;
+            padding: 0.1rem 2px;
+            scrollbar-width: none; -ms-overflow-style: none;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .scroll-filters::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            padding: 0.42rem 0.88rem; background: var(--bg-surface);
+            border-radius: 999px; color: var(--text-main); font-weight: 800;
+            white-space: nowrap; border: 1.5px solid var(--border); font-size: 0.82rem;
+            transition: var(--transition); flex-shrink: 0;
+        }
+        .filter-btn.active {
+            background: var(--primary); color: #FFFFFF; border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+        [data-theme="dark"] .filter-btn.active {
+            background: var(--primary); color: #0B0F17;
+        }
+
+        /* Place Directory Grid & Items */
+        .place-region-block { margin-top: 0.9rem; }
+        .place-region-header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: nowrap; gap: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            background: var(--bg-surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-weight: 900; font-size: 0.88rem;
+            margin-bottom: 0.55rem;
+        }
+        .place-region-header span:first-child { flex: 1; min-width: 0; }
+        .place-grid {
+            display: grid; grid-template-columns: 1fr; gap: 0.5rem;
+        }
+        @media (min-width: 640px) {
+            .place-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .place-item {
+            background: var(--bg-surface-inner);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.65rem 0.8rem;
+            display: flex; flex-direction: column; justify-content: space-between; gap: 0.45rem;
+        }
+        .place-item-top {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            flex-wrap: nowrap; gap: 0.45rem;
+        }
+        .place-item-name {
+            font-weight: 800; font-size: 0.88rem; color: var(--text-main);
+            line-height: 1.35; flex: 1; min-width: 0;
+        }
+        .place-item-note {
+            font-size: 0.76rem; color: var(--text-secondary); font-weight: 600; margin-top: 2px;
+        }
+        .place-item-actions {
+            display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin-top: 0.15rem;
+        }
+        .place-cat-tag {
+            font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 6px;
+            background: var(--bg-surface); border: 1px solid var(--border);
+            white-space: nowrap; flex-shrink: 0;
+        }
+
+        /* Timeline & Collapsible Day Cards */
+        .day-block { margin-bottom: 1.5rem; }
+        .day-banner {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: nowrap; gap: 0.5rem;
+            background: var(--bg-surface); border: 1.5px solid var(--border);
+            padding: 0.75rem 0.95rem; border-radius: var(--radius-md);
+            margin-bottom: 0.85rem; cursor: pointer;
+        }
+        .day-banner h3 {
+            font-size: 0.96rem; font-weight: 900; color: var(--text-main);
+            line-height: 1.35; flex: 1; min-width: 0;
+        }
+        .timeline { position: relative; padding-left: 18px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 5px; top: 8px; bottom: 8px;
+            width: 2.5px; background: var(--card-itinerary-border); border-radius: 3px;
+        }
+        .timeline-item { position: relative; margin-bottom: 1rem; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -17px; top: 7px;
+            width: 11px; height: 11px; border-radius: 50%;
+            background: var(--bg-surface); border: 2.5px solid var(--primary); z-index: 2;
+        }
+        .time-badge {
+            display: inline-flex; align-items: center;
+            font-size: 0.78rem; font-weight: 900;
+            margin-bottom: 0.4rem; padding: 2px 10px; border-radius: 999px;
+            letter-spacing: 0.01em; white-space: nowrap; max-width: 100%;
+        }
+        .activity-details p { margin-bottom: 0.45rem; font-size: 0.9rem; color: var(--text-main); font-weight: 500; }
+        .activity-details ul {
+            margin: 0.3rem 0 0.55rem 1.15rem; list-style-type: disc;
+            font-size: 0.86rem; color: var(--text-secondary);
+        }
+        .activity-details li { margin-bottom: 0.28rem; font-weight: 600; }
+
+        /* Alert & Info Callouts */
+        .alert-box {
+            background: var(--danger-soft);
+            border: 1.5px solid var(--danger);
+            border-left: 5px solid var(--danger);
+            color: var(--text-main);
+            padding: 0.75rem 0.9rem;
+            border-radius: var(--radius-sm);
+            margin: 0.6rem 0;
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+        .info-box {
+            background: var(--bg-surface-inner);
+            border: 1.5px solid var(--primary);
+            border-left: 5px solid var(--primary);
+            color: var(--text-main);
+            padding: 0.65rem 0.85rem;
+            border-radius: var(--radius-sm);
+            margin: 0.55rem 0;
+            font-size: 0.86rem;
+            font-weight: 800;
+        }
+
+        .progress-container {
+            background: var(--bg-surface); height: 10px; border-radius: 999px;
+            margin: 0.5rem 0 0.85rem; overflow: hidden; border: 1px solid var(--border);
+        }
+        .progress-bar {
+            background: var(--primary); height: 100%; width: 0%;
+            transition: width 0.35s ease;
+        }
+        .checklist-item {
+            display: flex; align-items: flex-start; gap: 0.65rem;
+            padding: 0.65rem 0.35rem; border-bottom: 1px solid var(--border);
+            cursor: pointer; font-size: 0.9rem; font-weight: 700; color: var(--text-main);
+        }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none; -webkit-appearance: none;
+            width: 20px; height: 20px; border: 2px solid var(--primary);
+            background: var(--bg-surface); border-radius: 6px;
+            position: relative; flex-shrink: 0; margin-top: 2px; cursor: pointer;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--primary); border-color: var(--primary);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '✓'; position: absolute; color: #FFFFFF; font-size: 13px;
+            top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 900;
+        }
+        [data-theme="dark"] .checklist-item input[type="checkbox"]:checked::after {
+            color: #0B0F17;
+        }
+        .checklist-item input[type="checkbox"]:checked + .check-content {
+            text-decoration: line-through; opacity: 0.62;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title-row {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 0.4rem; flex-wrap: nowrap;
+        }
+        /* Strictly prevent badges/labels from breaking into 2 lines */
+        .badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 2px 8px; border-radius: 6px;
+            font-size: 0.73rem; font-weight: 800; line-height: 1.3;
+            background: var(--bg-surface);
+            border: 1px solid var(--border); color: var(--text-main);
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .badge-done { background: #166534; color: #FFFFFF; border-color: #166534; }
+        .badge-todo { background: #9A3412; color: #FFFFFF; border-color: #9A3412; }
+
+        /* Expense Form & List (16px font on inputs prevents iOS Safari auto-zoom on focus) */
+        .expense-form {
+            display: grid; grid-template-columns: 1fr 110px auto; gap: 0.45rem; margin-bottom: 0.75rem;
+        }
+        @media (max-width: 480px) {
+            .expense-form { grid-template-columns: 1fr auto; }
+            .expense-form #exp-desc { grid-column: 1 / -1; }
+        }
+        .input-field {
+            padding: 0.55rem 0.75rem; border-radius: var(--radius-sm);
+            border: 1.5px solid var(--border); background: var(--bg-surface);
+            color: var(--text-main); font-size: 16px; font-weight: 700; width: 100%;
+        }
+        .input-field:focus { outline: 2px solid var(--primary); border-color: transparent; }
+        .expense-item {
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 0.5rem; flex-wrap: nowrap;
+            padding: 0.65rem 0.8rem; margin-bottom: 0.45rem;
+            background: var(--bg-surface-inner); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); font-size: 0.88rem;
+        }
+        .expense-item > div:first-child { flex: 1; min-width: 0; }
+        .expense-del-btn {
+            background: var(--danger-soft); color: var(--danger);
+            border: 1px solid var(--danger); border-radius: 7px;
+            padding: 3px 9px; font-size: 0.76rem; font-weight: 800;
+            margin-left: 0.4rem; white-space: nowrap; flex-shrink: 0;
+        }
+
+        /* Notes & Phrasebook */
+        .notes-area {
+            width: 100%; height: 160px; padding: 0.8rem;
+            border-radius: var(--radius-sm); border: 1.5px solid var(--border);
+            background: var(--bg-surface); color: var(--text-main);
+            font-size: 16px; font-weight: 600; resize: vertical;
+        }
+        .phrase-grid { display: grid; grid-template-columns: 1fr; gap: 0.65rem; }
+        @media (min-width: 640px) { .phrase-grid { grid-template-columns: repeat(2, 1fr); } }
+        .phrase-card {
+            background: var(--bg-surface-inner); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 0.75rem 0.9rem; cursor: pointer;
+            transition: var(--transition);
+        }
+        .phrase-card:active { transform: scale(0.98); }
+        .phrase-zh { font-size: 0.84rem; color: var(--text-secondary); font-weight: 700; }
+        .phrase-jp { font-size: 1.08rem; font-weight: 900; color: var(--text-main); margin: 0.15rem 0; }
+        .phrase-ro { font-size: 0.78rem; color: var(--accent); font-weight: 800; }
+
+        /* Floor Guide Table */
+        .floor-row {
+            display: flex; gap: 0.65rem; padding: 0.45rem 0;
+            border-bottom: 1px dashed var(--border); align-items: baseline;
+        }
+        .floor-row:last-child { border-bottom: none; }
+        .floor-tag {
+            min-width: 44px; text-align: center; font-weight: 900; font-size: 0.8rem;
+            background: var(--primary); color: #FFFFFF; border-radius: 6px; padding: 2px 6px;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        [data-theme="dark"] .floor-tag { color: #0B0F17; }
+
+        /* Sections & Toast & Back-to-top */
+        .app-section { display: none; animation: fadeIn 0.2s ease; }
+        .app-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .hidden { display: none !important; }
+
+        #toast {
+            position: fixed; top: calc(var(--safe-area-inset-top) + 14px); left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: #0F172A; color: #FFFFFF; padding: 10px 18px;
+            border-radius: 999px; font-weight: 800; font-size: 0.84rem; z-index: 3000;
+            opacity: 0; visibility: hidden; transition: all 0.25s ease;
+            box-shadow: var(--shadow-md); border: 1.5px solid #475569;
+            text-align: center; max-width: 92vw; white-space: nowrap;
+        }
+        #toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+        #btn-back-top {
+            position: fixed; right: 14px; bottom: calc(var(--nav-height) + 12px);
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--primary); color: #FFFFFF;
+            box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center;
+            z-index: 900; opacity: 0; visibility: hidden; transition: var(--transition);
+            font-weight: 900; font-size: 1rem;
+        }
+        [data-theme="dark"] #btn-back-top { color: #0B0F17; }
+        #btn-back-top.visible { opacity: 1; visibility: visible; }
+
+        /* Phrase Zoom Modal */
+        .modal-backdrop {
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.72);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2500; padding: 20px; opacity: 0; visibility: hidden; transition: var(--transition);
+        }
+        .modal-backdrop.open { opacity: 1; visibility: visible; }
+        .modal-box {
+            background: var(--bg-surface); color: var(--text-main);
+            border: 2px solid var(--border); border-radius: var(--radius-md);
+            padding: 1.4rem; max-width: 460px; width: 100%; text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+
+    <svg style="display: none;" aria-hidden="true">
+        <symbol id="icon-home" viewBox="0 0 24 24"><path d="M12 3L4 9v12h5v-7h6v7h5V9z"/></symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></symbol>
+        <symbol id="icon-luggage" viewBox="0 0 24 24"><path d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2h2v2h-2V4zm-2 15H7v-9h2v9zm4 0h-2v-9h2v9zm4 0h-2v-9h2v9z"/></symbol>
+        <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></symbol>
+        <symbol id="icon-tools" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></symbol>
+        <symbol id="icon-location" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+        <symbol id="icon-train" viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2.25v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.99-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></symbol>
+        <symbol id="icon-flight" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
+        <symbol id="icon-hotel" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></symbol>
+        <symbol id="icon-food" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></symbol>
+        <symbol id="icon-share" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></symbol>
+        <symbol id="icon-copy" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></symbol>
+        <symbol id="icon-info" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></symbol>
+        <symbol id="icon-link" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></symbol>
+    </svg>
+
+    <!-- Bottom / Top App Navigation -->
+    <nav class="bottom-nav" aria-label="主要導覽列">
+        <button class="nav-item active" data-target="view-overview">
+            <svg class="icon"><use href="#icon-home"></use></svg><span>總覽</span>
+        </button>
+        <button class="nav-item" data-target="view-itinerary">
+            <svg class="icon"><use href="#icon-calendar"></use></svg><span>每日行程</span>
+        </button>
+        <button class="nav-item" data-target="view-prep">
+            <svg class="icon"><use href="#icon-luggage"></use></svg><span>準備清單</span>
+        </button>
+        <button class="nav-item" data-target="view-budget">
+            <svg class="icon"><use href="#icon-wallet"></use></svg><span>記帳預算</span>
+        </button>
+        <button class="nav-item" data-target="view-tools">
+            <svg class="icon"><use href="#icon-tools"></use></svg><span>實用工具</span>
+        </button>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-top">
+                <span class="chip"><svg class="icon-sm"><use href="#icon-calendar"></use></svg> 19/10 - 25/10/2026 (7日)</span>
+                <div class="hero-actions">
+                    <button id="btn-theme-toggle" class="btn" aria-label="切換深淺色主題">
+                        <svg class="icon-sm" id="theme-icon"><use href="#icon-moon"></use></svg>
+                        <span id="theme-label">深色</span>
+                    </button>
+                    <button id="btn-share" class="btn" aria-label="分享行程">
+                        <svg class="icon-sm"><use href="#icon-share"></use></svg> 分享
+                    </button>
+                </div>
+            </div>
+            <h1>⛩️ 日本 － 廣島 ‧ 岡山 ‧ 大阪</h1>
+            <p class="subtitle">原爆和平紀念、宮島大鳥居、倉敷美觀與大阪梅田掃貨 7 日遊</p>
+            <div class="chips-container" aria-label="行程快速資訊">
+                <span class="chip"><svg class="icon-sm"><use href="#icon-hotel"></use></svg> 2 人同行</span>
+                <span class="chip"><svg class="icon-sm"><use href="#icon-train"></use></svg> 關西&廣島 JR Pass (5日)</span>
+                <span class="chip"><svg class="icon-sm"><use href="#icon-flight"></use></svg> UO822 / UO851</span>
+                <span class="chip"><svg class="icon-sm"><use href="#icon-location"></use></svg> 廣島進 ‧ 關西出</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- ==================== TAB 1: OVERVIEW (淡紫薰衣草色卡片) ==================== -->
+        <section id="view-overview" class="app-section active">
+            <div class="section-header">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-home"></use></svg> 7 日行程速覽 (點擊跳轉)</h2>
+                <span class="text-xs font-bold">點選卡片可直達當日明細</span>
+            </div>
+
+            <div class="grid-2">
+                <article class="card" style="cursor:pointer;" data-jump-day="day1">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 1：香港起飛 ➔ 抵達廣島</h3>
+                        <span class="badge section-badge">10/19 (一)</span>
+                    </div>
+                    <p class="text-secondary">05:00 出門搭 A36/N26 巴士赴港機 T2，09:05 UO822 飛廣島。轉乘機場巴士直達廣島站北口 Check-in。傍晚廣電至八丁堀逛 PARCO、BEAMS，晚餐食廣島燒（麗ちゃん / 電光石火）。</p>
+                    <div class="card-inner text-sm font-bold">
+                        🏨 住宿：大和魯內酒店 廣島站前
+                    </div>
+                </article>
+
+                <article class="card" style="cursor:pointer;" data-jump-day="day2">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 2：宮島大鳥居 ‧ 原爆和平公園</h3>
+                        <span class="badge section-badge">10/20 (二)</span>
+                    </div>
+                    <p class="text-secondary">08:15 出門搭 JR 轉渡輪赴宮島（10:27 潮位 142），逛嚴島神社、表參道、食牡蠣屋與炸紅葉饅頭。下午預約 15:00 參觀和平紀念資料館與原爆圓頂，晚上逛 Animate、Bookoff 及食鳥貴族。</p>
+                    <div class="card-inner text-sm font-bold">
+                        🏨 住宿：大和魯內酒店 廣島站前
+                    </div>
+                </article>
+
+                <article class="card" style="cursor:pointer;" data-jump-day="day3">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 3：岡山與倉敷美觀一日遊</h3>
+                        <span class="badge section-badge">10/21 (三)</span>
+                    </div>
+                    <p class="text-secondary">08:00 出門搭山陽新幹線轉伯備線遊覽倉敷美觀地區（約 4 小時），13:00 已預約「焼肉 和牛のたか 倉敷本店」。傍晚逛 AEON Mall 岡山與一番街，21:00 搭新幹線返廣島。</p>
+                    <div class="card-inner text-sm font-bold">
+                        🏨 住宿：大和魯內酒店 廣島站前
+                    </div>
+                </article>
+
+                <article class="card" style="cursor:pointer;" data-jump-day="day4">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 4：轉移大阪 ➔ 京都伏見稻荷 ➔ 心齋橋</h3>
+                        <span class="badge section-badge">10/22 (四)</span>
+                    </div>
+                    <p class="text-secondary">09:00 退房搭新幹線至大阪寄存行李。下午憑 JR Pass 零自費前往京都伏見稻荷大社爬上「四ツ辻」。傍晚逛心齋橋/道頓堀，20:30 已訂座「蟹道樂 網元本館」。</p>
+                    <div class="card-inner text-sm font-bold">
+                        🏨 住宿：Hotel Intergate Osaka Umeda
+                    </div>
+                </article>
+
+                <article class="card" style="cursor:pointer;" data-jump-day="day5">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 5：臨空港 Outlet ➔ 難波道頓堀</h3>
+                        <span class="badge section-badge">10/23 (五)</span>
+                    </div>
+                    <p class="text-secondary">小美醬掃貨日 1：08:45 出門搭 JR 關空快速（務必搭 1-4 號車廂）直達 Rinku Premium Outlets。16:00 返大阪市區繼續逛心齋橋、橙街，晚餐於難波自選美食。</p>
+                    <div class="card-inner text-sm font-bold">
+                        🏨 住宿：Hotel Intergate Osaka Umeda
+                    </div>
+                </article>
+
+                <article class="card" style="cursor:pointer;" data-jump-day="day6">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 6：梅田商圈全日狂歡掃貨</h3>
+                        <span class="badge section-badge">10/24 (六)</span>
+                    </div>
+                    <p class="text-secondary">小美醬掃貨日 2 & 3：全日步行逛阪急三番街、Grand Front、Yodobashi、LINKS、LUCUA 1100、阪急／大丸／阪神百貨，以及新開幕 6 層樓 Alpen OSAKA 旗艦店。</p>
+                    <div class="card-inner text-sm font-bold">
+                        🏨 住宿：Hotel Intergate Osaka Umeda
+                    </div>
+                </article>
+
+                <article class="card" style="cursor:pointer;" data-jump-day="day7">
+                    <div class="card-header">
+                        <h3 class="font-bold">Day 7：梅田早午餐 ➔ 關西機場返港</h3>
+                        <span class="badge section-badge">10/25 (日)</span>
+                    </div>
+                    <p class="text-secondary">09:50 退房寄存行李，步行至 Whity 梅田享用早午餐。11:45 取行李往大阪站地下月台搭 12:18 Haruka 23 號赴關西機場買手信，15:15 搭 UO851 返抵香港（19:00）。</p>
+                    <div class="card-inner text-sm font-bold">
+                        ✈️ 回程：10/25 19:00 抵達香港
+                    </div>
+                </article>
+            </div>
+
+            <!-- 航班與住宿完整資訊 -->
+            <div class="section-header mt-4">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-hotel"></use></svg> 航班、住宿與必備票券</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="font-bold mb-2"><svg class="icon"><use href="#icon-flight"></use></svg> 航班及主要交通票券</h3>
+                    <div class="card-inner">
+                        <p class="font-bold">🛫 去程：2026-10-19 (星期一)</p>
+                        <p class="text-secondary text-sm">HK Express <strong>UO822</strong>｜09:05 香港 (HKG T2) ➔ 13:40 廣島 (HIJ)</p>
+                        <p class="text-xs mt-1">訂單號／確認碼：待確認（請見 HK Express 登機登記 Email）</p>
+                    </div>
+                    <div class="card-inner">
+                        <p class="font-bold">🛬 回程：2026-10-25 (星期日)</p>
+                        <p class="text-secondary text-sm">HK Express <strong>UO851</strong>｜15:15 關西機場 (KIX) ➔ 19:00 香港 (HKG)</p>
+                        <p class="text-xs mt-1">專用接駁：12:18 JR 特急 Haruka 23 號（大阪站地下月台 21/22 號）</p>
+                    </div>
+                    <div class="card-inner">
+                        <p class="font-bold">🎫 必備周遊券：關西&廣島地區鐵路周遊券 (5日)</p>
+                        <p class="text-secondary text-sm">狀態：已於 JR 官網購買並已列印 (x2)。覆蓋範圍含山陽新幹線（廣島⇔新大阪）、JR 山陽本線、宮島渡輪、京都線、奈良線、關空快速及 Haruka。</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold mb-2"><svg class="icon"><use href="#icon-hotel"></use></svg> 住宿酒店詳情</h3>
+                    <div class="card-inner">
+                        <p class="font-bold">1️⃣ 大和魯內酒店 廣島站前</p>
+                        <p class="text-xs font-bold">Daiwa Roynet Hotel Hiroshima-Ekimae</p>
+                        <p class="text-secondary text-sm mt-1">• 入住：10/19 (15:30 或之前)｜退房：10/22 09:00（最遲 11:00）<br>• 位置：位於 JR 廣島站「新幹線口（北口）」，北出入口行 5 分鐘直達酒店。樓下有 Lawson、7-11。<br>• 確認號碼：待確認</p>
+                        <div class="mt-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Hiroshima-Ekimae" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg> Google Maps</a>
+                            <button class="copy-btn" data-copy="Daiwa Roynet Hotel Hiroshima-Ekimae (大和魯內酒店 廣島站前)"><svg class="icon-sm"><use href="#icon-copy"></use></svg> 複製名稱</button>
+                        </div>
+                    </div>
+                    <div class="card-inner">
+                        <p class="font-bold">2️⃣ 大阪梅田國際之門酒店</p>
+                        <p class="text-xs font-bold">Hotel Intergate Osaka Umeda</p>
+                        <p class="text-secondary text-sm mt-1">• 入住：10/22 (11:30 先放行李，15:00 入住)｜退房：10/25 09:50<br>• 位置：從 JR 大阪站「櫻橋口 (桜橋口)／西口」出站，向西南方步行約 5-8 分鐘。<br>• 確認號碼：待確認</p>
+                        <div class="mt-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Intergate+Osaka+Umeda" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg> Google Maps</a>
+                            <button class="copy-btn" data-copy="Hotel Intergate Osaka Umeda (大阪梅田國際之門酒店)"><svg class="icon-sm"><use href="#icon-copy"></use></svg> 複製名稱</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔗 攻略與常用連結 (完整保留自 Google Docs) -->
+            <div class="section-header mt-4">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-link"></use></svg> 攻略與常用連結 (文件核實)</h2>
+            </div>
+            <div class="card">
+                <p class="text-secondary text-sm mb-2">以下為行程文件內附之實用交通時間表、潮汐表及優惠券網站：</p>
+                <div class="grid-2">
+                    <a href="https://www.bigfang.tw/blog/post/hiroshima-airport-limousine" target="_blank" rel="noopener noreferrer" class="card-inner font-bold text-sm">🔗 [2026廣島交通攻略] 廣島機場巴士直達市區、購票、票價、時刻表、轉乘全搞定！</a>
+                    <a href="https://www.hij.airport.jp/tw/access/timetable/2.html" target="_blank" rel="noopener noreferrer" class="card-inner font-bold text-sm">🚌 廣島機場巴士時間表 (官方時刻表)</a>
+                    <a href="https://www.miyajima.or.jp/sio/sio01.php" target="_blank" rel="noopener noreferrer" class="card-inner font-bold text-sm">🌊 宮島潮漲退時間表 (10/20 10:27 潮位 142)</a>
+                    <a href="https://www.aqua-net-h.co.jp/heritage/" target="_blank" rel="noopener noreferrer" class="card-inner font-bold text-sm">⛴️ 搭船去平和公園時間表 (宮島 ➔ 平和公園世界遺產航路)</a>
+                    <a href="https://www.japaholic.com/tw/coupon/" target="_blank" rel="noopener noreferrer" class="card-inner font-bold text-sm">🎟️ Japaholic coupon 優惠網</a>
+                    <a href="https://japantravel.navitime.com/zh-tw/area/jp/route/" target="_blank" rel="noopener noreferrer" class="card-inner font-bold text-sm">🚆 NAVITIME 臨空城交通指引</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 2: ITINERARY (瀨戶內海淡青色卡片) ==================== -->
+        <section id="view-itinerary" class="app-section">
+            <div class="section-header" id="itinerary-top-anchor">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-calendar"></use></svg> 每日詳細行程</h2>
+                <button id="btn-toggle-all-days" class="btn text-xs">收起全部日程</button>
+            </div>
+
+            <div class="sticky-day-bar" id="sticky-day-bar">
+                <div class="scroll-filters" id="day-scroll-filters" role="tablist" aria-label="選擇行程日期">
+                    <button class="filter-btn active" data-day="all">全部顯示 (7日)</button>
+                    <button class="filter-btn" data-day="day1">Day 1｜19/10 (一)</button>
+                    <button class="filter-btn" data-day="day2">Day 2｜20/10 (二)</button>
+                    <button class="filter-btn" data-day="day3">Day 3｜21/10 (三)</button>
+                    <button class="filter-btn" data-day="day4">Day 4｜22/10 (四)</button>
+                    <button class="filter-btn" data-day="day5">Day 5｜23/10 (五)</button>
+                    <button class="filter-btn" data-day="day6">Day 6｜24/10 (六)</button>
+                    <button class="filter-btn" data-day="day7">Day 7｜25/10 (日)</button>
+                </div>
+            </div>
+
+            <!-- DAY 1 -->
+            <div class="day-block" id="day1">
+                <div class="day-banner" data-collapse-target="day1-body" aria-expanded="true">
+                    <h3>Day 1：2026-10-19（星期一）香港機場起飛 ➔ 抵達廣島</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day1-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">05:00 - 13:40｜出發與航班</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">香港機場起飛 ➔ 到達廣島機場</h4>
+                            <div class="activity-details">
+                                <p>🚌 <strong>05:00 出門口搭巴士：</strong></p>
+                                <ul>
+                                    <li><strong>S：巴士 A36</strong> — 05:00 分出門口（05:10 <a href="https://www.google.com/maps/search/?api=1&query=%E9%8C%A6%E4%B8%8A%E8%B7%AF%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>錦上路</a>開，車程約 37 分鐘）</li>
+                                    <li><strong>C：巴士 N26</strong> —（05:00 <a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%B9%E5%A1%98%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>油塘</a>開，車程約一個鐘）</li>
+                                </ul>
+                                <p>🍽️ <strong>06:00 am：</strong>到達 <a href="https://www.google.com/maps/search/?api=1&query=%E9%A6%99%E6%B8%AF%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4+T2" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>香港國際機場 T2</a>（預食早餐）</p>
+                                <p>✈️ <strong>09:05 am 起飛：</strong>搭乘 HK Express <strong>UO822</strong></p>
+                                <p>🛬 <strong>13:40 (1:40 pm) 到達：</strong>抵達 <a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6%E6%A9%9F%E5%A0%B4" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>廣島機場</a></p>
+                                <p>🧳 <strong>14:15 - 14:30 (2:15 - 2:30 pm)：</strong>成功入境 + 攞行李</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">14:13 - 15:30｜機場巴士 & 酒店 Check-in</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">交通（機場 ➔ 廣島站）及廣島 Daiwa 酒店 Check-in</h4>
+                            <div class="activity-details">
+                                <p>🚌 <strong>廣島機場巴士：</strong>出境後前往機場外的 <strong>2 號巴士站</strong>，搭乘「廣島機場巴士」直達 <a href="https://www.google.com/maps/search/?api=1&query=JR%E5%BB%A3%E5%B3%B6%E7%AB%99+%E6%96%B0%E5%B9%B9%E7%B7%9A%E5%8F%A3" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>JR 廣島站「新幹線口（北口）」</a>。</p>
+                                <ul>
+                                    <li><strong>預定班次：</strong>14:13 (2:13pm) ➔ 15:05 (3:05pm) 或 14:30 (2:30pm) ➔ 15:20 (3:20pm)</li>
+                                    <li><strong>乘車時間與費用：</strong>車程約 50 分鐘，單程 <strong>1,500 日圓（需自費）</strong></li>
+                                    <li><strong>首/尾班車備註：</strong>配合當日首班航機 (約 08:30) / 配合當日尾班航機 (約 21:40)。<a href="https://www.hij.airport.jp/tw/access/timetable/2.html" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-link"></use></svg>官方時間表</a></li>
+                                </ul>
+                                <p>🏨 <strong>15:30 (3:30pm) 或之前 酒店 Check-in：</strong><a href="https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Hiroshima-Ekimae" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>大和魯內酒店 廣島站前 (Daiwa Roynet Hotel Hiroshima-Ekimae)</a>（位於新幹線口，北出入口行 5 分鐘直達酒店）。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">17:00 起｜市中心行街、晚餐與超市</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">本通・八丁堀商圈行街 & 廣島燒晚餐</h4>
+                            <div class="activity-details">
+                                <p>🚋 <strong>17:00 (5:00pm) 出發 — 交通（酒店 ➔ 本通）：</strong>從廣島站南口搭乘「廣島電鐵（路面電車）」<strong>1、2、6 號線</strong>，於 <a href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E4%B8%81%E5%A0%80%E7%AB%99+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>八丁堀站</a> 下車（約 7 分鐘，<strong>240 日圓</strong>）。路面電車首班約 05:40 / 尾班約 23:30。</p>
+                                <p>🛍️ <strong>預計行的商場及鋪頭：</strong></p>
+                                <ul>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6PARCO+%E6%9C%AC%E9%A4%A8" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>廣島PARCO 本館</a>、<a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6PARCO+%E6%96%B0%E9%A4%A8" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>廣島PARCO 新館</a>（新館：2/F - FREAK'S STORE, 3/F MIZUNO）</li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=BEAMS+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>BEAMS 廣島</a></li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=ref.+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>ref</a></li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=THE+NORTH+FACE+STANDARD+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>THE NORTH FACE STANDARD 廣島</a></li>
+                                </ul>
+                                <p>🍽️ <strong>晚餐（車站附近）：</strong></p>
+                                <ul>
+                                    <li>廣島燒 麗ちゃん：<a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6%E7%87%92+%E9%BA%97%E3%81%A1%E3%82%83%E3%82%93" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>麗ちゃん 地圖</a></li>
+                                    <li>廣島燒 電光石火：<a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6%E7%87%92+%E9%9B%BB%E5%85%89%E7%9F%B3%E7%81%AB+%E5%BB%A3%E5%B3%B6%E9%A7%85" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>電光石火 地圖</a></li>
+                                </ul>
+                                <p>🛒 <strong>超市與便利店：</strong></p>
+                                <ul>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=youme+Mart+Futabanosato" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>youme Mart Futabanosato 超市</a> (09:00 - 00:00)：買聽日酒店食的早餐。</li>
+                                    <li>酒店樓下有 <a href="https://www.google.com/maps/search/?api=1&query=Lawson+%E5%BB%A3%E5%B3%B6%E9%A7%85%E5%8C%97%E5%8F%A3" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Lawson</a>、<a href="https://www.google.com/maps/search/?api=1&query=7-Eleven+%E5%BB%A3%E5%B3%B6%E9%A7%85%E5%8C%97%E5%8F%A3" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>7-11</a>。</li>
+                                </ul>
+                                <div class="info-box">🌊 返酒店必做：檢查聽日去宮島鳥居退漲時間（<a href="https://www.miyajima.or.jp/sio/sio01.php" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-link"></use></svg>宮島潮漲退時間表</a>：10:27，潮位 142）。</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day-block" id="day2">
+                <div class="day-banner" data-collapse-target="day2-body" aria-expanded="true">
+                    <h3>Day 2：2026-10-20（星期二）宮島及原爆一日</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day2-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">08:15 - 09:35｜出發往宮島</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">交通（酒店 ➔ 宮島口 ➔ 宮島渡輪）</h4>
+                            <div class="activity-details">
+                                <p>🥐 <strong>出發準備：</strong>酒店內食早餐，<strong>08:15 am 出門</strong>，<strong>08:30 am 出發搭車</strong>。</p>
+                                <p>🚆 <strong>08:35 am ➔ 09:03 am：</strong>搭乘 JR 山陽本線至 <a href="https://www.google.com/maps/search/?api=1&query=JR%E5%AE%AE%E5%B3%B6%E5%8F%A3%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>宮島口站</a>（約 28 分鐘，420 日圓 / JR Pass 包）。</p>
+                                <p>⛴️ <strong>09:15 am ➔ 09:25 am：</strong>出站步行 3 分鐘轉乘 <a href="https://www.google.com/maps/search/?api=1&query=JR%E8%A5%BF%E6%97%A5%E6%9C%AC%E5%AE%AE%E5%B3%B6%E3%83%95%E3%82%A7%E3%83%AA%E3%83%BC%E4%B9%97%E3%82%8A%E5%A0%B4" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>JR 西日本宮島渡輪</a>（約 10 分鐘，300 日圓含稅）。落船行 10 分鐘到神社。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">09:35 - 12:00 (約 2.5 小時)｜嚴島神社 & 表參道</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">嚴島鳥居、表參道商店街與宮島午餐</h4>
+                            <div class="info-box">🌊 <a href="https://www.miyajima.or.jp/sio/sio01.php" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-link"></use></svg>宮島潮漲退時間表</a>：10:27（潮位 142）</div>
+                            <div class="activity-details">
+                                <p>⛩️ <strong>景點與地址：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E5%9A%B4%E5%B3%B6%E7%A5%9E%E7%A4%BE" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>嚴島神社</a> & <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%9C%8B%E7%A5%9E%E7%A4%BE+%E5%AE%AE%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>大國社</a>（開放時間：嚴島神社 06:30 - 17:00/18:00 依季節變動；表參道商店街約 09:00 - 17:00 陸續關門）。</p>
+                                <p>🛍️ <strong><a href="https://www.google.com/maps/search/?api=1&query=%E5%AE%AE%E5%B3%B6%E8%A1%A8%E5%8F%83%E9%81%93%E5%95%86%E5%BA%97%E8%A1%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>宮島表參道商店街</a> 必行：</strong></p>
+                                <ul>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=BEAMS+JAPAN+%E5%AE%AE%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>宮島 Beams</a>：天藍色貓貓</li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+%E5%9A%B4%E5%B3%B6%E8%A1%A8%E5%8F%83%E9%81%93%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Starbucks 嚴島表參道店</a>：限定杯</li>
+                                </ul>
+                                <p>🦪 <strong>午餐及小食：</strong></p>
+                                <ul>
+                                    <li>廣島蠔：<a href="https://www.google.com/maps/search/?api=1&query=%E7%89%A1%E8%A0%A3%E5%B1%8B+%E5%AE%AE%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>牡蠣屋</a> (10:00 am - 6:00 pm)</li>
+                                    <li>飲品：<a href="https://www.google.com/maps/search/?api=1&query=GEBURA+%E5%AE%AE%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>gebura 廣島</a> - 檸檬梳打 (10:00 am - 5:00 pm)</li>
+                                    <li>小吃：<a href="https://www.google.com/maps/search/?api=1&query=%E7%B4%85%E8%91%89%E5%A0%82%E6%9C%AC%E5%BA%97+%E5%AE%AE%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>炸紅葉饅頭 紅葉堂本店</a> (9:00 am - 5:30 pm)</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">12:45 - 17:00｜和平紀念資料館 & 原爆圓頂</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">交通（宮島 ➔ 原爆圓頂）及資料館參觀</h4>
+                            <div class="activity-details">
+                                <p>🚋 <strong>交通方案 A（渡輪 + 廣電）：</strong></p>
+                                <ul>
+                                    <li>搭渡輪回宮島口：12:45pm ➔ 12:50pm 或 12:55pm ➔ 1:05pm</li>
+                                    <li>轉乘廣島電鐵 2 號線直達 <a href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E7%88%86%E3%83%89%E3%83%BC%E3%83%A0%E5%89%8D%E9%A7%85" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>原爆ドーム前站</a> (1:00pm ➔ 1:51pm 或 1:10pm ➔ 2:01pm，約 1 小時 5 分鐘，<strong>640 日圓</strong>)</li>
+                                </ul>
+                                <p>⛴️ <strong>交通方案 B（高速船直達）：</strong>或搭船去平和公園 (1:10pm ➔ 1:55pm，45 分鐘，<strong>2,500 日圓</strong>，<a href="https://www.aqua-net-h.co.jp/heritage/" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-link"></use></svg>班次表</a>)。</p>
+                                <p>🏛️ <strong>15:00 - 17:00（約 2 小時）已預約 3:00 pm：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6%E5%92%8C%E5%B9%B3%E7%B4%80%E5%BF%B5%E8%B3%87%E6%96%99%E9%A4%A8" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>廣島和平紀念資料館</a>（08:30 - 18:00，17:30 最後入場）。</p>
+                                <p>🕊️ <strong>周邊參觀（外觀 24 小時開放）：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E7%88%86%E5%9C%93%E9%A0%82%E9%A4%A8" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>原爆圓頂館</a> & <a href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E5%B3%B6%E5%92%8C%E5%B9%B3%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>和平紀念公園</a>（平和之燈 / 原爆之子雕像）。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">17:00 起｜市中心行街 & 鳥貴族晚飯</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">Animate、Bookoff 補逛與鳥貴族晚餐</h4>
+                            <div class="activity-details">
+                                <p>🚶 <strong>行街（市中心）：</strong>行路去返市中心：<a href="https://www.google.com/maps/search/?api=1&query=Animate+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Animate 廣島</a>、<a href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+%E5%BB%A3%E5%B3%B6%E5%A4%A7%E6%89%8B%E7%94%BA" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Bookoff</a>，繼續琴日未睇晒的行程；後備：<a href="https://www.google.com/maps/search/?api=1&query=SOGO+%E5%BB%A3%E5%B3%B6%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>SOGO 廣島</a> + <a href="https://www.google.com/maps/search/?api=1&query=Pacela+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Pacela</a>。</p>
+                                <p>🐤 <strong>晚飯：</strong>市中心 <a href="https://www.google.com/maps/search/?api=1&query=%E9%B3%A5%E8%B2%B4%E6%97%8F+%E5%BB%A3%E5%B3%B6" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>鳥貴族(已訂位9:00PM)</a>。</p>
+                                <p>🚋 <strong>返酒店：</strong>搭乘廣島電鐵 1、2、6 號線於「廣島站」下車（約 15 分鐘，<strong>220 日圓</strong>），上房間前去便利店買聽日早餐。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 3 -->
+            <div class="day-block" id="day3">
+                <div class="day-banner" data-collapse-target="day3-body" aria-expanded="true">
+                    <h3>Day 3：2026-10-21（星期三）岡山與倉敷一日遊</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day3-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">08:00 - 09:39｜出發前往倉敷</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">交通（廣島 ➔ 岡山 ➔ 倉敷）</h4>
+                            <div class="activity-details">
+                                <p>🥐 <strong>08:00 am 出門口：</strong>先於酒店食早餐。</p>
+                                <p>🚄 <strong>路線說明：</strong>「廣島站」搭乘山陽新幹線直達 <a href="https://www.google.com/maps/search/?api=1&query=JR%E5%B2%A1%E5%B1%B1%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>岡山站</a>（約 40 分鐘）➔ 轉乘 JR 山陽本線/伯備線至 <a href="https://www.google.com/maps/search/?api=1&query=JR%E5%80%89%E6%95%B7%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>倉敷站南口</a>（約 15 分鐘）。</p>
+                                <ul>
+                                    <li><strong>首選班次：</strong>Sanyo Shinkansen 希望 6 東京 (08:22am ➔ 08:57am) ➔ JR 八雲 5 特急出雲市 (09:13am ➔ 09:24am) ➔ 步行至 09:39am (15 分鐘)</li>
+                                    <li><strong>備選 1：</strong>Sanyo Shinkansen 櫻花 740 新大阪 (08:10am ➔ 08:33am) ➔ 山陽線普通岡山 (08:39am ➔ 09:22am) ➔ 步行至 09:35am (13 分鐘)</li>
+                                    <li><strong>備選 2：</strong>Sanyo Shinkansen 希望 84 東京 (07:57am ➔ 08:32am) ➔ 山陽線普通三原 (08:41am ➔ 08:58am) ➔ 步行至 09:14am (16 分鐘)</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">09:39 - 13:30 (約 4 小時)｜倉敷美觀地區 & 燒肉午餐</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">漫步倉敷美觀地區 & 預約和牛燒肉</h4>
+                            <div class="activity-details">
+                                <p>🏮 <strong>景點地址：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E5%80%89%E6%95%B7%E7%BE%8E%E8%A7%80%E5%9C%B0%E5%8D%80" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>倉敷美觀地區</a>（街區 24 小時，店鋪約 09:00 - 17:00 關門）。</p>
+                                <p>🛍️ <strong>「倉敷站」附近的地方（有時間先行）：</strong><a href="https://www.google.com/maps/search/?api=1&query=Asobi+gocoro+%E5%80%89%E6%95%B7" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Asobi gocoro (扭蛋)</a>、<a href="https://www.google.com/maps/search/?api=1&query=Ario+%E5%80%89%E6%95%B7" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Ario 倉敷</a>、<a href="https://www.google.com/maps/search/?api=1&query=MITSUI+OUTLET+PARK+%E5%80%89%E6%95%B7" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>倉敷 Outlet</a>。</p>
+                                <p>🥩 <strong>13:00 (1:00pm) 午飯（已預約）：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89+%E5%92%8C%E7%89%9B%E3%81%AE%E3%81%9F%E3%81%8B+%E5%80%89%E6%95%B7%E6%9C%AC%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>焼肉 和牛のたか 倉敷本店</a></p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">17:30 - 21:30 (約 3.5 小時)｜AEON Mall 岡山 & 返酒店</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">行街與晚餐 － AEON Mall 岡山</h4>
+                            <div class="activity-details">
+                                <p>🚆 <strong>交通（倉敷 ➔ 岡山）：</strong>倉敷站搭乘 JR 山陽本線（普通列車）／特急八雲號直達岡山站（約 17 分鐘，每 10–15 分鐘一班），由地下街直通商場。</p>
+                                <p>🏬 <strong>商場地址：</strong><a href="https://www.google.com/maps/search/?api=1&query=AEON+Mall+%E5%B2%A1%E5%B1%B1" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>永旺夢樂城 岡山 (AEON Mall 岡山)</a>（零售 10:00 - 21:00，餐廳至 22:00）。</p>
+                                <p>✨ <strong>如返岡山的時間尚早可逛：</strong><a href="https://www.google.com/maps/search/?api=1&query=Sun+Station+Terrace+%E5%B2%A1%E5%B1%B1" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Sun station Terrace</a>、<a href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A1%E5%B1%B1%E4%B8%80%E7%95%AA%E8%A1%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>岡山一番街</a>、<a href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A1%E5%B1%B1%E8%A1%A8%E7%94%BA%E5%95%86%E5%BA%97%E8%A1%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>表町商店街</a>。</p>
+                                <p>🚄 <strong>21:00 - 21:30 離開返廣島：</strong>搭 JR「岡山站」直達「廣島站」（約 40 分鐘，Sanyo Shinkansen 希望 / 櫻花）。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 4 -->
+            <div class="day-block" id="day4">
+                <div class="day-banner" data-collapse-target="day4-body" aria-expanded="true">
+                    <h3>Day 4：2026-10-22（星期四）Checkout ➔ 梅田酒店 ➔ 京都 ➔ 心齋橋難波</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day4-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">09:00 - 11:30｜退房 & 轉移至大阪梅田</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">廣島退房 ➔ 新幹線往大阪寄存行李</h4>
+                            <div class="activity-details">
+                                <p>🏨 <strong>09:00 退房：</strong>離開房間到櫃台 checkout（最遲 check-out 時間: 11:00am），行去廣島站買便當/咖啡。</p>
+                                <p>🚄 <strong>搭山陽新幹線直達 <a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%A4%A7%E9%98%AA%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>新大阪站</a>（約 2 小時）：</strong></p>
+                                <ul>
+                                    <li><strong>班次 A：</strong>09:29 廣島 ➔ 10:55 新大阪 (希望 124) ➔ 11:08 新大阪 ➔ 11:12 <a href="https://www.google.com/maps/search/?api=1&query=JR%E5%A4%A7%E9%98%AA%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>大阪車站</a> (東海道線 普通 寶塚) ➔ 11:20 步行 8 分鐘抵達。</li>
+                                    <li><strong>班次 B：</strong>09:43 廣島 ➔ 11:04 新大阪 (希望 14) ➔ 11:14 新大阪 ➔ 11:18 大阪車站 (東海道線 普通 須磨) ➔ 11:26 步行 8 分鐘抵達。</li>
+                                </ul>
+                                <p>🧳 <strong>約 11:30 am 抵達酒店放行李（3:00pm 先可以 check-in）：</strong><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Intergate+Osaka+Umeda" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Hotel Intergate Osaka Umeda</a>（從 JR 大阪站「櫻橋口 (桜橋口)／西口」出站，向西南方步行約 5-8 分鐘）。</p>
+                                <p>🍽️ <strong>早午餐：</strong>JR 大阪站 / 京都車站附近食；商場：<a href="https://www.google.com/maps/search/?api=1&query=KITTE+%E5%A4%A7%E9%98%AA" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>KITTE 大阪</a>。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">13:00 - 17:08｜京都伏見稻荷大社</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">伏見稻荷大社千本鳥居 & 四ツ辻觀景</h4>
+                            <div class="info-box">🎫 全程適用 JR 5日券（零自費），出站即達景點大門，零接駁迷路風險！</div>
+                            <div class="activity-details">
+                                <p>🚆 <strong>去程交通：</strong></p>
+                                <ul>
+                                    <li><strong>13:00 – 13:29：</strong>JR 大阪站 ➔ <a href="https://www.google.com/maps/search/?api=1&query=JR%E4%BA%AC%E9%83%BD%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>JR 京都站</a>（JR 京都線新快速，29 分鐘）。</li>
+                                    <li><strong>13:35 – 13:40：</strong>JR 京都站 8、9、10 號月台轉乘「JR 奈良線（普通列車 Local）」➔ <a href="https://www.google.com/maps/search/?api=1&query=JR%E7%A8%BB%E8%8D%B7%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>JR 稻荷站</a>（2 站，5 分鐘；<strong>⚠️ 切勿搭乘不停靠稻荷的快速列車</strong>）。</li>
+                                    <li><strong>13:40：</strong>出閘即達神社正門紅色大鳥居。</li>
+                                </ul>
+                                <p>⛩️ <strong>13:45 – 16:15 景點遊覽：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8F%E8%A6%8B%E7%A8%BB%E8%8D%B7%E5%A4%A7%E7%A4%BE" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>伏見稻荷大社</a> 本殿參拜、穿越前段千本鳥居。穿過前段奧社奉拜所後，順步道往前半山腰爬升約 15-20 分鐘抵達 <a href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9B%E3%83%84%E8%BE%BB+%E4%BC%8F%E8%A6%8B%E7%A8%BB%E8%8D%B7" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>四ツ辻</a> 觀景點，甩開 80% 團客，俯瞰京都市景並拍攝無人鳥居（境內 24 小時全天開放）。</p>
+                                <p>🚆 <strong>回程交通：</strong></p>
+                                <ul>
+                                    <li><strong>16:20 – 16:25：</strong>JR 稻荷站 ➔ JR 京都站 (奈良線 1 番線)</li>
+                                    <li><strong>16:29 – 16:57：</strong>JR 京都站 ➔ JR 大阪站 (JR 新快速 姬路行)</li>
+                                    <li><strong>17:02 – 17:08：</strong>梅田轉乘地下鐵御堂筋線 ➔ <a href="https://www.google.com/maps/search/?api=1&query=%E5%BF%83%E9%BD%8B%E6%A9%9B%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>心齋橋站</a> / <a href="https://www.google.com/maps/search/?api=1&query=%E9%9B%A3%E6%B3%A2%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>難波站</a>（車資 <strong>240 日圓</strong>）</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">17:15 - 22:00｜心齋橋行街 & 蟹道樂晚飯</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">心齋橋/道頓堀血拼 & 蟹道樂 網元本館</h4>
+                            <div class="activity-details">
+                                <p>🛍️ <strong>17:15 – 20:25 心齋橋/道頓堀行街、吃章魚燒小吃：</strong></p>
+                                <ul>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=FR2+%E5%BF%83%E9%BD%8B%E6%A9%9B" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>#FR2 OSAKA</a>、<a href="https://www.google.com/maps/search/?api=1&query=HUMAN+MADE+1928+OSAKA+%E5%BF%83%E9%BD%8B%E6%A9%9B" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Human Made</a></li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%BF%83%E9%BD%8B%E6%A9%9B+PARCO" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>心齋橋 PARCO</a> (chiikawa & 5/F rofj by jump)</li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA+%E6%A9%99%E8%A1%97+Orange+Street" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>橙街 (Orange Street)</a>、<a href="https://www.google.com/maps/search/?api=1&query=DEAL+DESIGN+%E5%A4%A7%E9%98%AA+%E5%BF%83%E9%BD%8B%E6%A9%9B" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>deal design</a></li>
+                                </ul>
+                                <p>🦀 <strong>20:30 晚飯（已訂座 20:30）：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%81%AB%E9%81%93%E6%A5%BD+%E7%B6%B2%E5%85%83%E6%9C%AC%E9%A4%A8" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>蟹道樂 網元本館 (かに道楽 網元本館)</a></p>
+                                <ul>
+                                    <li>20:00 (8:00pm) 出發，由道頓堀/心齋橋行去約 15 分鐘可達</li>
+                                    <li>到達時間：20:30（用餐至約 22:00）｜營業時間：11:30 - 22:00（21:00 Last Order）</li>
+                                </ul>
+                                <p>🛒 <strong>24小時超市：</strong><a href="https://www.google.com/maps/search/?api=1&query=AEON+FOOD+STYLE+Yotsubashi+Store" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>AEON FOOD STYLE Yotsubashi Store</a> (24 小時)，注意地鐵 00:00 尾班車。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 5 -->
+            <div class="day-block" id="day5">
+                <div class="day-banner" data-collapse-target="day5-body" aria-expanded="true">
+                    <h3>Day 5：2026-10-23（星期五）臨空港 Outlet 大半日遊 ➔ 難波道頓堀</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day5-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">08:45 - 16:00｜小美醬掃貨日 1（臨空城 Outlet）</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">前往臨空城 & Rinku Premium Outlets</h4>
+                            <div class="alert-box">
+                                ⚠️ <strong>極重要乘車陷阱（切勿上錯車廂）：</strong><br>
+                                JR 大阪站開出的「關空快速」通常與「紀州路快速」串接（8節編組）。列車行駛至 <a href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E6%A0%B9%E9%87%8E%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>日根野站</a> 時會在中途解聯拆開：<br>
+                                • <strong>第 1 至 4 節車廂（1〜4号車）：</strong>開往關西機場 / 停靠臨空城（<strong>務必確認地板標示並登上這 4 節！</strong>）<br>
+                                • <strong>第 5 至 8 節車廂（5〜8号車）：</strong>拆開開往和歌山方向。
+                            </div>
+                            <div class="activity-details">
+                                <p>🚆 <strong>08:45 出門口：</strong>搭乘「JR 關空快速」從大阪去 <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%A8%E7%A9%BA%E5%9F%8E%E7%AB%99" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>臨空城站</a>（車資 JR 5日券 100% 全包，<a href="https://japantravel.navitime.com/zh-tw/area/jp/route/" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-link"></use></svg>NAVITIME 臨空城交通指引</a>）：</p>
+                                <ul>
+                                    <li>08:51 ➔ 09:57</li>
+                                    <li>09:05 ➔ 10:11</li>
+                                    <li>09:19 ➔ 10:25</li>
+                                </ul>
+                                <p>🛍️ <strong>臨空港 Outlet 購物：</strong>跟隨指標走 <strong>2 號出口</strong>，全天候行人天橋步行約 6–8 分鐘直達 <a href="https://www.google.com/maps/search/?api=1&query=Rinku+Premium+Outlets" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Rinku Premium Outlets</a>。</p>
+                                <p>🕒 <strong>營業時間：</strong>商店 10:00 - 20:00，餐廳 11:00 - 21:00，咖啡館 09:30 - 20:00。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">16:00 起｜返回大阪市區 & 難波晚餐</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">道頓堀與心齋橋行街 & 難波晚餐候選</h4>
+                            <div class="activity-details">
+                                <p>🚆 <strong>16:00 (4:00pm) 離開 Outlet：</strong>搭「JR 關空快速」臨空城去大阪（16:23 ➔ 17:28 或 16:38 ➔ 17:43）。大阪行去梅田（3 分鐘），梅田搭地鐵去心齋橋站/難波站（7 分鐘）。</p>
+                                <p>🛍️ <strong>行街（道頓堀與心齋橋）：</strong>FR2, Human Made, parco chiikawa & 5/F rofj by jump, 橙街。</p>
+                                <p>🍽️ <strong>晚飯推薦候選名單（全部可點開 Google Maps）：</strong></p>
+                                <ul>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E5%BF%83+%E9%9B%A3%E6%B3%A2" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>魚心</a>（可以在 Google Map 訂位）</li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E9%87%8E%E5%8F%A3%E5%A4%AA%E9%83%8E+%E5%A4%A7%E9%98%AA" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>野口太郎</a></li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E4%B9%9D%E5%B7%9E%E3%82%89%E3%83%BC%E3%82%81%E3%82%93%E4%BA%80%E7%8E%8B+%E9%9B%A3%E6%B3%A2NGK%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>九州拉麵龜王 難波NGK店</a>（舊地重遊）</li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E7%87%92%E8%82%89%E5%8A%9B%E4%B8%B8+%E9%9B%A3%E6%B3%A2%E9%81%93%E9%A0%93%E5%A0%80%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>燒肉力丸 難波道頓堀店</a></li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E9%B6%8F%E7%99%BD%E6%B9%AF%E3%82%89%E3%83%BC%E3%82%81%E3%82%93+%E9%87%91%E9%BA%A6+%E9%9B%A3%E6%B3%A2%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>鶏白湯らーめん・つけ麺 金麦 難波店</a>（營業至 22:00）</li>
+                                    <li><a href="https://www.google.com/maps/search/?api=1&query=%E9%B6%8F%E7%99%BD%E6%B9%AF%E5%91%B3%E5%99%8C%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3+%E7%8C%BF%E3%81%AE%E3%81%99%E3%81%91" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>鶏白湯味噌ラーメン 猿のすけ</a>（營業至 04:00am）</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 6 -->
+            <div class="day-block" id="day6">
+                <div class="day-banner" data-collapse-target="day6-body" aria-expanded="true">
+                    <h3>Day 6：2026-10-24（星期六）梅田商圈全日狂歡掃貨 (小美醬掃貨日 2 & 3)</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day6-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">全日 Part 1｜小美醬掃貨日 2</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">阪急三番街、Grand Front、Yodobashi、Links、LUCUA 1100</h4>
+                            <div class="info-box">🏨 全天由酒店步行出發，隨時可將戰利品放回 Hotel Intergate Osaka Umeda！</div>
+                            <div class="activity-details">
+                                <p>🛍️ <strong><a href="https://www.google.com/maps/search/?api=1&query=%E9%98%AA%E6%80%A5%E4%B8%89%E7%95%AA%E8%A1%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>阪急三番街</a>：</strong>JR 大阪站 2 樓天橋北出口，穿過 LUCUA 及 Yodobashi，落樓梯左手邊（chiikawa, kiddy land, 好多餐廳）。</p>
+                                <p>🏬 <strong><a href="https://www.google.com/maps/search/?api=1&query=Grand+Front+Osaka" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Grand Front Osaka</a> (11:00 - 21:00, 餐廳至 23:00)：</strong></p>
+                                <ul>
+                                    <li><strong>購物：</strong>南館 3 樓 Beams、5 樓 The North Face & Montbell；北館 2-4 樓 無印良品 (MUJI)。</li>
+                                    <li><strong>南館 7-9 樓 食野：</strong>7 樓 <a href="https://www.google.com/maps/search/?api=1&query=%E5%91%B3%E3%81%AE%E7%89%9B%E3%81%9F%E3%82%93%E5%96%9C%E5%8A%A9+%E6%A2%85%E7%94%B0" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>味之牛培助 (牛舌飯)</a>、<a href="https://www.google.com/maps/search/?api=1&query=%E3%81%B2%E3%81%A4%E3%81%BE%E3%81%B6%E3%81%97%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%82%99%E9%95%B7+Grand+Front" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>名古屋備長 (鰻魚飯)</a>、<a href="https://www.google.com/maps/search/?api=1&query=Rojiura+Curry+SAMURAI+Grand+Front+Osaka" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Rojiura curry SAMURAI. (北海道咖哩)</a>。</li>
+                                    <li><strong>南館 2 樓 甜點：</strong><a href="https://www.google.com/maps/search/?api=1&query=Qu%27il+fait+bon+Grand+Front+Osaka" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>水果撻 (キル フェ ボン Qu'il fait bon)</a> — 可以外賣去酒店食。</li>
+                                </ul>
+                                <p>🎮 <strong><a href="https://www.google.com/maps/search/?api=1&query=Yodobashi+Camera+%E6%A2%85%E7%94%B0" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Yodobashi camera</a> & <a href="https://www.google.com/maps/search/?api=1&query=LINKS+UMEDA" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Links Umeda</a>：</strong></p>
+                                <ul>
+                                    <li>Yodobashi camera：4＆5 樓 扭蛋，1 & 5 & 8 樓 餐廳。</li>
+                                    <li>Links Umeda：2 樓 Ainz Tulpe、扭蛋。</li>
+                                </ul>
+                                <p>💄 <strong><a href="https://www.google.com/maps/search/?api=1&query=LUCUA+1100" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>LUCUA 1100</a> (10:30 - 20:30)：</strong>SHIRO、@cosme OSAKA、伊右衛門（精品、護膚品、cafe）。</p>
+                                <p>🍲 <strong>午餐：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%82%83%E3%81%B6%E7%A6%85+%E6%A2%85%E7%94%B0%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>しゃぶ禅 梅田店</a>｜🧁 <strong>小食：</strong><a href="https://www.google.com/maps/search/?api=1&query=grenier+%E6%A2%85%E7%94%B0%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>grenier 梅田店</a></p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">全日 Part 2｜小美醬掃貨日 3 & Alpen OSAKA</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">三大百貨、Alpen OSAKA 旗艦店 & 炸豬排晚餐</h4>
+                            <div class="activity-details">
+                                <p>1️⃣ <strong><a href="https://www.google.com/maps/search/?api=1&query=%E9%98%AA%E6%80%A5%E7%99%BE%E8%B2%A8+%E6%A2%85%E7%94%B0%E6%9C%AC%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>阪急百貨 梅田本店</a>：</strong>2 樓 名店，B1/F 手信街 (10:00 - 20:00)。</p>
+                                <p>2️⃣ <strong><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E4%B8%B8%E6%A2%85%E7%94%B0%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>大丸梅田店</a> 及 <a href="https://www.google.com/maps/search/?api=1&query=%E9%98%AA%E7%A5%9E%E7%99%BE%E8%B2%A8+%E6%A2%85%E7%94%B0%E6%9C%AC%E5%BA%97" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>阪神百貨</a>：</strong>位於 JR 大阪中央南口。</p>
+                                <p>3️⃣ <strong><a href="https://www.google.com/maps/search/?api=1&query=Alpen+OSAKA+%E8%8C%B6%E5%B1%8B%E7%94%BA" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Alpen OSAKA（關西首家旗艦店）</a>：</strong></p>
+                                <div class="card-inner mb-2">
+                                    <p class="text-xs font-bold mb-1">📍 地址：大阪市北區茶屋町 1-32 YANMAR FLYING-Y BUILDING B2～4F（鄰近 Grand Front Osaka、LINKS UMEDA、阪急百貨、友都八喜梅田｜10:00 - 21:00｜2026/8/7 正式開幕）</p>
+                                    <div class="floor-row"><span class="floor-tag">B2</span><span class="text-sm">高爾夫球桿</span></div>
+                                    <div class="floor-row"><span class="floor-tag">B1</span><span class="text-sm">二手高爾夫球具、球鞋、球包</span></div>
+                                    <div class="floor-row"><span class="floor-tag">1F</span><span class="text-sm">跑鞋、運動鞋</span></div>
+                                    <div class="floor-row"><span class="floor-tag">2F</span><span class="text-sm">運動服飾、籃球、游泳健身用品</span></div>
+                                    <div class="floor-row"><span class="floor-tag">3F</span><span class="text-sm">足球、棒球、網球、羽球、桌球（設專業體驗區：人工草皮足球區、有明同款硬地網球區）</span></div>
+                                    <div class="floor-row"><span class="floor-tag">4F</span><span class="text-sm">戶外服飾、登山裝備、背包</span></div>
+                                </div>
+                                <p>🥩 <strong>晚餐推薦：</strong><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%82%93%E3%81%8B%E3%81%A4+%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%99%E3%82%A4%E3%83%96+%E8%B1%8A%E5%B4%8E" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>とんかつニューベイブ 豊崎</a></p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 7 -->
+            <div class="day-block" id="day7">
+                <div class="day-banner" data-collapse-target="day7-body" aria-expanded="true">
+                    <h3>Day 7：2026-10-25（星期日）酒店 Checkout ➔ 早午餐 ➔ 關西機場返港</h3>
+                    <span class="badge">收起 / 展開</span>
+                </div>
+                <div id="day7-body" class="timeline">
+                    <div class="timeline-item">
+                        <span class="time-badge">09:30 - 11:30｜退房與早午餐</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">Hotel Intergate 退房寄存 & 梅田早午餐</h4>
+                            <div class="activity-details">
+                                <p>🏨 <strong>09:50 am 酒店 Check out：</strong>在 <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Intergate+Osaka+Umeda" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>Hotel Intergate Osaka Umeda</a> 退房並寄存行李。</p>
+                                <p>☕ <strong>09:30 - 11:30 早午餐：</strong>步行至 <a href="https://www.google.com/maps/search/?api=1&query=Whity+%E6%A2%85%E7%94%B0" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>梅田地下街 (Whity 梅田)</a> 或百貨享用早午餐（咖啡廳約 08:00 - 10:00 營業）。</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="time-badge">10:30 - 19:00｜Haruka 往關西機場 & 返港</span>
+                        <article class="card">
+                            <h4 class="font-bold mb-2">JR 特急 Haruka 19 號 ➔ 關西機場買手信 & 起飛</h4>
+                            <div class="activity-details">
+                                <p>🧳 <strong>10:30：</strong>回酒店提取行李，步行約 8 分鐘至 <a href="https://www.google.com/maps/search/?api=1&query=JR%E5%A4%A7%E9%98%AA%E7%AB%99+%E3%81%86%E3%82%81%E3%81%8D%E3%81%9F%E5%9C%B0%E4%B8%8B%E5%8F%A3" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>JR 大阪站</a>。</p>
+                                <div class="alert-box">
+                                    🚆 <strong>注意月台：</strong>循指標前往 <strong>「地下月台 (うめきた地下口)」的 21、22 號月台</strong>。<br>
+                                    <strong>11:03 搭乘 JR 特急 Haruka 19 號</strong>（使用 JR Pass 免費，請事先劃位）。
+                                </div>
+                                <p>🛃 <strong>抵達 <a href="https://www.google.com/maps/search/?api=1&query=%E9%97%9C%E8%A5%BF%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4" class="map-link" target="_blank" rel="noopener noreferrer"><svg class="icon-sm"><use href="#icon-location"></use></svg>關西機場</a>（文件備註 12:00pm / Haruka 預計約 11:55 抵達）：</strong>準時抵達，直接前往報到櫃檯辦理手續，於關西機場食野及買手信（大阪機場 sweet）。</p>
+                                <p>✈️ <strong>15:15 (3:15pm) 起飛：</strong>HK Express <strong>UO851</strong> ➔ <strong>19:00 (07:00pm) 抵達香港</strong>。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 3: PREP (宇治抹茶暖綠色卡片) ==================== -->
+        <section id="view-prep" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-luggage"></use></svg> 行前待辦、執野清單與手信</h2>
+            </div>
+
+            <!-- 📋 Notion「To-do’s」資料庫 (完整 9 項，含日期、負責人、備註) -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div>
+                        <h3 class="font-bold">📋 Notion「To-do’s」資料庫 (全 9 項)</h3>
+                        <p class="text-xs text-secondary">可點擊勾選切換狀態，進度自動儲存於本地</p>
+                    </div>
+                    <span id="todo-progress-text" class="badge">5/9 完成</span>
+                </div>
+                <div id="todo-list">
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="0" checked>
+                        <div class="check-content">
+                            <div class="check-title-row"><span>買 Esim x 2</span> <span class="badge badge-done">Done</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-05｜👤 負責人：2人｜備註：已買</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="1" checked>
+                        <div class="check-content">
+                            <div class="check-title-row"><span>insurance (旅遊保險)</span> <span class="badge badge-done">Done</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：—｜👤 負責人：1人｜備註：買了 MSIG，已列印</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="2">
+                        <div class="check-content">
+                            <div class="check-title-row"><span>登機登記</span> <span class="badge badge-todo">Not Started</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-17｜👤 負責人：1人｜備註：Email (hkexpress)</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="3" checked>
+                        <div class="check-content">
+                            <div class="check-title-row"><span>Visit japan QRcode</span> <span class="badge badge-done">Done</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-18｜👤 負責人：2人｜備註：登記 & 上機前cap定圖 QRCODE</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="4" checked>
+                        <div class="check-content">
+                            <div class="check-title-row"><span>關西&廣島地區鐵路周遊券 (5日)</span> <span class="badge badge-done">Done</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-01｜👤 負責人：1人｜備註：已購買, JR官網</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="5">
+                        <div class="check-content">
+                            <div class="check-title-row"><span>Netflix</span> <span class="badge badge-todo">Not Started</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-18｜👤 負責人：2人｜備註：Down定片睇</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="6">
+                        <div class="check-content">
+                            <div class="check-title-row"><span>禁現金 YEN</span> <span class="badge badge-todo">Not Started</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-12｜👤 負責人：1人｜備註：—</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="7">
+                        <div class="check-content">
+                            <div class="check-title-row"><span>汁野去新屋</span> <span class="badge badge-todo">Not Started</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-15｜👤 負責人：1人｜備註：背囊, 尿袋, YEN, 耳機, 手機繩, oldsmith袋, 手制, 香水樽, 新牙套, 物, 基本藥品, 外套, JRPASS x2, 密實袋放尿袋</div>
+                        </div>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-todo-id="8" checked>
+                        <div class="check-content">
+                            <div class="check-title-row"><span>print JR pass x2</span> <span class="badge badge-done">Done</span></div>
+                            <div class="text-xs text-secondary">📅 預定日期：2026-10-12｜👤 負責人：1人｜備註：已列印</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 🧳 執野清單（Packing List 完整 22 項） -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div>
+                        <h3 class="font-bold">🧳 執野清單 Packing List (完整 22 項)</h3>
+                        <p class="text-xs text-secondary">嚴格對應原稿全部 22 項物品</p>
+                    </div>
+                    <div style="display:flex; gap:0.4rem; align-items:center;">
+                        <span id="pack-progress-text" class="badge font-bold">0%</span>
+                        <button id="btn-reset-pack" class="btn text-xs" style="padding:3px 8px;">重設</button>
+                    </div>
+                </div>
+                <div class="progress-container"><div class="progress-bar" id="pack-progress-bar"></div></div>
+                <div id="packing-list">
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">1. 護照及身份證</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">2. 機票及行程確認</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">3. 錢包（yen, hkd現金及信用卡），環保袋 (old smith, GU)</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">4. 充電線x2，充電器x2，移動電源，密實袋放尿袋，日本轉換插頭</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">5. 衣物（出街衫及褲 3set、內衣、襪子、訓教衫褲、帽子）</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">6. 毛巾／墊枕頭巾</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">7. 基本藥品（止痛藥、腸胃藥、過敏藥、日本黃色感冒藥）</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">8. Beams袋 / 無印袋</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">9. 直髮器, 髮夾</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">10. 剃so刨</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">11. 摺疊傘 (睇天氣)</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">12. 清熱酷 (粉袋各人一盒)</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">13. 牙套盒, 牙套牙刷, 新牙套</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">14. 紙巾 8包</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">15. 濕紙巾 x2</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">16. 口罩-各人7個</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">17. 浸溫泉用毛巾, 防水袋</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">18. 搽身體cream，唇膏，潤手霜</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">19. 出街保鮮袋 7個</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">20. 洗衣垃圾袋 2個</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">21. 洗衫袋</span></label>
+                    <label class="checklist-item"><input type="checkbox"><span class="check-content">22. 即影即有相機及菲林</span></label>
+                </div>
+            </div>
+
+            <!-- 🎁 手信清單 (Souvenir List) -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="font-bold">🎁 手信清單 (Souvenir List)</h3>
+                </div>
+                <div class="expense-form" style="grid-template-columns: 1fr auto;">
+                    <input type="text" id="souvenir-input" class="input-field" placeholder="新增手信項目 (如: 紅葉饅頭)...">
+                    <button id="btn-add-souvenir" class="btn btn-primary">+ 新增</button>
+                </div>
+                <div id="souvenir-list"></div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 4: BUDGET (嚴島陶土暖橘色卡片) ==================== -->
+        <section id="view-budget" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-wallet"></use></svg> 記帳與預算管理</h2>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div>
+                        <h3 class="font-bold">💴 新增本地開支 (YEN ⇄ HKD)</h3>
+                        <p class="text-xs text-secondary">自動儲存於本機，關閉瀏覽器不會遺失</p>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:4px;">
+                        <span class="text-xs font-bold">匯率:</span>
+                        <input type="number" id="fx-rate" class="input-field" value="0.052" step="0.001" style="width:78px; padding:4px 6px; font-size:0.82rem;">
+                    </div>
+                </div>
+
+                <div class="expense-form mt-2">
+                    <input type="text" id="exp-desc" class="input-field" placeholder="項目名稱 (如: 牡蠣屋午餐)">
+                    <input type="number" id="exp-amt" class="input-field" placeholder="金額 (¥)" inputmode="numeric">
+                    <button id="btn-add-exp" class="btn btn-primary">+ 加入</button>
+                </div>
+
+                <div class="card-inner" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem;">
+                    <div>
+                        <div class="text-xs font-bold">目前累計開支 (<span id="exp-count">0</span> 筆)：</div>
+                        <div class="text-xs text-secondary">約合港幣 HK$<span id="exp-total-hkd">0</span></div>
+                    </div>
+                    <div style="font-size: 1.55rem; font-weight: 900; color: var(--accent);">
+                        ¥<span id="exp-total">0</span>
+                    </div>
+                </div>
+
+                <div id="exp-list">
+                    <!-- Injected via JS -->
+                </div>
+
+                <div style="display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap;">
+                    <button id="btn-clear-exp" type="button" class="btn btn-danger" style="flex: 1;">
+                        🗑️ 清空所有記帳
+                    </button>
+                    <button id="btn-undo-exp" type="button" class="btn hidden" style="flex: 1;">
+                        ↩ 復原剛才清空的紀錄
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="font-bold mb-2">📊 文件已確認之固定交通／門票支出（每人）</h3>
+                <p class="text-xs text-secondary mb-2">可點擊「+ 記入帳本」直接將固定支出加入上方記帳表：</p>
+                <div class="expense-item">
+                    <div>
+                        <div class="font-bold">廣島機場巴士（機場 ➔ 廣島站北口）</div>
+                        <div class="text-xs text-secondary">Day 1｜單程需自費</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="font-bold">¥1,500</span>
+                        <button class="btn text-xs quick-exp-btn" data-desc="廣島機場巴士" data-amt="1500">+ 記入</button>
+                    </div>
+                </div>
+                <div class="expense-item">
+                    <div>
+                        <div class="font-bold">廣島電鐵（廣島站 ➔ 八丁堀）</div>
+                        <div class="text-xs text-secondary">Day 1｜路面電車單程</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="font-bold">¥240</span>
+                        <button class="btn text-xs quick-exp-btn" data-desc="廣電(往八丁堀)" data-amt="240">+ 記入</button>
+                    </div>
+                </div>
+                <div class="expense-item">
+                    <div>
+                        <div class="font-bold">廣島電鐵 2 號線（宮島口 ➔ 原爆ドーム前）</div>
+                        <div class="text-xs text-secondary">Day 2｜或選搭高速船 ¥2,500</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="font-bold">¥640</span>
+                        <button class="btn text-xs quick-exp-btn" data-desc="廣電(宮島口往原爆)" data-amt="640">+ 記入</button>
+                    </div>
+                </div>
+                <div class="expense-item">
+                    <div>
+                        <div class="font-bold">廣島電鐵（市中心 ➔ 廣島站）</div>
+                        <div class="text-xs text-secondary">Day 2｜路面電車返酒店</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="font-bold">¥220</span>
+                        <button class="btn text-xs quick-exp-btn" data-desc="廣電(返廣島站)" data-amt="220">+ 記入</button>
+                    </div>
+                </div>
+                <div class="expense-item">
+                    <div>
+                        <div class="font-bold">大阪地鐵御堂筋線（梅田 ➔ 心齋橋/難波）</div>
+                        <div class="text-xs text-secondary">Day 4 & Day 5｜單程車資</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="font-bold">¥240</span>
+                        <button class="btn text-xs quick-exp-btn" data-desc="大阪地鐵(梅田往心齋橋)" data-amt="240">+ 記入</button>
+                    </div>
+                </div>
+                <div class="expense-item">
+                    <div>
+                        <div class="font-bold">關西&廣島地區鐵路周遊券 (5日)</div>
+                        <div class="text-xs text-secondary">包：山陽新幹線、JR 山陽本線、JR 宮島渡輪(¥300)、京都/稻荷 JR、關空快速、Haruka</div>
+                    </div>
+                    <span class="badge badge-done">已預付</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 5: TOOLS (倉敷丹寧冰藍色卡片) ==================== -->
+        <section id="view-tools" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title"><svg class="icon"><use href="#icon-tools"></use></svg> 隨身筆記、地圖速查與日語</h2>
+            </div>
+
+            <!-- 隨身筆記 (Auto-save) -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div>
+                        <h3 class="font-bold">📝 隨身筆記 (自動儲存)</h3>
+                        <p class="text-xs text-secondary">記錄 Locker 密碼、免稅單號、臨時購物清單（即時寫入本機）</p>
+                    </div>
+                    <span id="note-status" class="badge" style="opacity: 0; transition: opacity 0.25s;">✓ 已自動儲存</span>
+                </div>
+                <textarea id="quick-notes" class="notes-area" placeholder="在此輸入隨身筆記...（打字後會自動儲存）"></textarea>
+                <div style="display:flex; gap:0.5rem; margin-top:0.6rem;">
+                    <button id="btn-copy-notes" class="btn text-xs"><svg class="icon-sm"><use href="#icon-copy"></use></svg> 複製全部筆記</button>
+                    <button id="btn-clear-notes" class="btn btn-danger text-xs">清空筆記</button>
+                </div>
+            </div>
+
+            <!-- 常用旅遊日語 (點擊放大給店員看) -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div>
+                        <h3 class="font-bold">🗣️ 常用旅遊日語（點擊卡片可全屏放大）</h3>
+                        <p class="text-xs text-secondary">直接點擊句子即可放大顯示，方便遞給日本店員看</p>
+                    </div>
+                </div>
+                <div class="phrase-grid mt-2">
+                    <div class="phrase-card" data-jp="これ、いくらですか？" data-zh="請問這個多少錢？" data-ro="Kore, ikura desu ka?">
+                        <div class="phrase-zh">🛒 請問這個多少錢？</div>
+                        <div class="phrase-jp">これ、いくらですか？</div>
+                        <div class="phrase-ro">Kore, ikura desu ka?</div>
+                    </div>
+                    <div class="phrase-card" data-jp="免税（めんぜい）できますか？" data-zh="請問可以辦理免稅嗎？" data-ro="Menzei dekimasu ka?">
+                        <div class="phrase-zh">🛒 請問可以免稅嗎？</div>
+                        <div class="phrase-jp">免税できますか？</div>
+                        <div class="phrase-ro">Menzei dekimasu ka?</div>
+                    </div>
+                    <div class="phrase-card" data-jp="新しい在庫はありますか？" data-zh="請問有新的庫存嗎？" data-ro="Atarashii zaiko wa arimasu ka?">
+                        <div class="phrase-zh">🛍️ 請問有新的庫存嗎？</div>
+                        <div class="phrase-jp">新しい在庫はありますか？</div>
+                        <div class="phrase-ro">Atarashii zaiko wa arimasu ka?</div>
+                    </div>
+                    <div class="phrase-card" data-jp="二人（ふたり）です。予約しています。" data-zh="我們兩位，已經有預約。" data-ro="Futari desu. Yoyaku shite imasu.">
+                        <div class="phrase-zh">🍽️ 兩位，我們有預約。</div>
+                        <div class="phrase-jp">二人です。予約しています。</div>
+                        <div class="phrase-ro">Futari desu. Yoyaku shite imasu.</div>
+                    </div>
+                    <div class="phrase-card" data-jp="お会計（かいけい）をお願いします。" data-zh="麻煩買單，謝謝。" data-ro="Okaikei o onegaishimasu.">
+                        <div class="phrase-zh">🍽️ 麻煩買單，謝謝。</div>
+                        <div class="phrase-jp">お会計をお願いします。</div>
+                        <div class="phrase-ro">Okaikei o onegaishimasu.</div>
+                    </div>
+                    <div class="phrase-card" data-jp="チェックアウト後、荷物を預かってもらえますか？" data-zh="退房後可以寄存行李嗎？" data-ro="Chekkuauto go, nimotsu o azukatte moraemasu ka?">
+                        <div class="phrase-zh">🏨 退房後可以寄存行李嗎？</div>
+                        <div class="phrase-jp">荷物を預かってもらえますか？</div>
+                        <div class="phrase-ro">Nimotsu o azukatte moraemasu ka?</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 📍 全行程主要地點 Google Maps 速查與複製清單 -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="font-bold">📍 全行程地點 Google Maps 速查與一鍵複製</h3>
+                        <p class="text-xs text-secondary">已按 8 大地區完整收錄 Google Maps 清單及全行程共 <span id="places-total-count">78</span> 個地點</p>
+                    </div>
+                </div>
+
+                <!-- 專屬 Google Maps 清單置頂捷徑 -->
+                <div class="info-box" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.9rem;">
+                    <div style="min-width: 0; flex: 1;">
+                        <div class="font-bold">🗺️ Google Maps 專屬行程地標清單 (Saved List)</div>
+                        <div class="text-xs text-secondary" style="word-break: break-all;">https://maps.app.goo.gl/afniQaM96L8AmnF17</div>
+                    </div>
+                    <div style="display:flex; gap:0.4rem; flex-wrap:nowrap; flex-shrink:0;">
+                        <a href="https://maps.app.goo.gl/afniQaM96L8AmnF17" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">
+                            <svg class="icon-sm"><use href="#icon-location"></use></svg> 開啟清單
+                        </a>
+                        <button type="button" class="btn text-xs" data-copy="https://maps.app.goo.gl/afniQaM96L8AmnF17">
+                            <svg class="icon-sm"><use href="#icon-copy"></use></svg> 複製連結
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 搜尋與地區篩選列 -->
+                <div style="margin-bottom: 0.75rem;">
+                    <input type="search" id="place-search-input" class="input-field" placeholder="🔍 搜尋地點、餐廳、商場、車站或關鍵字 (如: 燒肉 / PARCO / 廣島)...">
+                </div>
+
+                <div class="scroll-filters" id="region-scroll-filters" role="tablist" aria-label="按地區篩選地點">
+                    <button type="button" class="filter-btn active" data-region="all">全部地區</button>
+                    <button type="button" class="filter-btn" data-region="廣島市區">🍁 廣島市區</button>
+                    <button type="button" class="filter-btn" data-region="宮島・嚴島">⛩️ 宮島・嚴島</button>
+                    <button type="button" class="filter-btn" data-region="岡山・倉敷">🍑 岡山・倉敷</button>
+                    <button type="button" class="filter-btn" data-region="京都・伏見">⛩️ 京都・伏見</button>
+                    <button type="button" class="filter-btn" data-region="大阪・梅田">🏙️ 大阪・梅田</button>
+                    <button type="button" class="filter-btn" data-region="心齋橋・道頓堀・難波">🦀 心齋橋・難波</button>
+                    <button type="button" class="filter-btn" data-region="臨空城・關西機場">🛍️ 臨空城・關空</button>
+                    <button type="button" class="filter-btn" data-region="香港出發">✈️ 香港出發</button>
+                </div>
+
+                <!-- 動態渲染之全地區地點列表 -->
+                <div id="places-directory-container"></div>
+
+                <!-- 新增自訂地點至清單 -->
+                <div class="card-inner mt-3">
+                    <div class="font-bold text-sm mb-2">➕ 新增自訂地點至速查清單（自動儲存於本機）</div>
+                    <div class="grid-2" style="gap:0.5rem;">
+                        <select id="custom-place-region" class="input-field text-sm">
+                            <option value="廣島市區">🍁 廣島市區</option>
+                            <option value="宮島・嚴島">⛩️ 宮島・嚴島</option>
+                            <option value="岡山・倉敷">🍑 岡山・倉敷</option>
+                            <option value="京都・伏見">⛩️ 京都・伏見</option>
+                            <option value="大阪・梅田">🏙️ 大阪・梅田</option>
+                            <option value="心齋橋・道頓堀・難波">🦀 心齋橋・道頓堀・難波</option>
+                            <option value="臨空城・關西機場">🛍️ 臨空城・關西機場</option>
+                            <option value="香港出發">✈️ 香港出發</option>
+                        </select>
+                        <input type="text" id="custom-place-name" class="input-field text-sm" placeholder="地點名稱 (如: 一蘭拉麵 廣島本通店)">
+                    </div>
+                    <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+                        <input type="text" id="custom-place-note" class="input-field text-sm" placeholder="備註或分類 (選填，如: 宵夜候選 / 24小時)">
+                        <button type="button" id="btn-add-custom-place" class="btn btn-primary text-sm" style="white-space:nowrap;">+ 加入清單</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Phrase Zoom Modal (No browser alert/confirm) -->
+    <div id="phrase-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-jp">
+        <div class="modal-box">
+            <div id="modal-zh" class="text-secondary font-bold mb-2"></div>
+            <div id="modal-jp" style="font-size: 2rem; font-weight: 900; line-height: 1.35; margin: 1rem 0;"></div>
+            <div id="modal-ro" class="font-bold mb-3" style="color: var(--accent);"></div>
+            <button id="btn-close-modal" class="btn btn-primary" style="width: 100%;">關閉視窗</button>
+        </div>
+    </div>
+
+    <button id="btn-back-top" aria-label="回到頂部">↑</button>
+    <div id="toast" role="status" aria-live="polite">提示訊息</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Safe Storage Wrapper (Prevents crashes if iframe blocks localStorage) ---
+            const memoryFallback = {};
+            const safeStorage = {
+                get(key, fallbackVal) {
+                    try {
+                        const raw = window.localStorage.getItem(key);
+                        return raw !== null ? JSON.parse(raw) : fallbackVal;
+                    } catch (err) {
+                        return memoryFallback[key] !== undefined ? memoryFallback[key] : fallbackVal;
+                    }
+                },
+                set(key, val) {
+                    memoryFallback[key] = val;
+                    try {
+                        window.localStorage.setItem(key, JSON.stringify(val));
+                    } catch (err) {}
+                }
+            };
+
+            // --- 0. Global Toast Notification & HTML Escape Helper ---
+            const escapeHtml = (str) => String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+
+            const toastEl = document.getElementById('toast');
+            let toastTimer = null;
+            const showToast = (msg) => {
+                if (!toastEl) return;
+                toastEl.textContent = msg;
+                toastEl.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2600);
+            };
+
+            // --- 1. Light / Dark Theme Toggle (With iOS Safari theme-color Meta Sync) ---
+            const root = document.documentElement;
+            const themeBtn = document.getElementById('btn-theme-toggle');
+            const themeLabel = document.getElementById('theme-label');
+            const themeIconUse = document.querySelector('#theme-icon use');
+            const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+            const applyTheme = (theme) => {
+                root.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    themeLabel.textContent = '淺色';
+                    themeIconUse.setAttribute('href', '#icon-sun');
+                    if (themeMeta) themeMeta.setAttribute('content', '#090D16');
+                } else {
+                    themeLabel.textContent = '深色';
+                    themeIconUse.setAttribute('href', '#icon-moon');
+                    if (themeMeta) themeMeta.setAttribute('content', '#FFFFFF');
+                }
+            };
+
+            const savedTheme = safeStorage.get('jp_trip_theme', 'light');
+            applyTheme(savedTheme);
+
+            themeBtn.addEventListener('click', () => {
+                const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                safeStorage.set('jp_trip_theme', nextTheme);
+                showToast(nextTheme === 'dark' ? '🌙 已切換至深色高對比模式' : '☀️ 已切換至淺色休閒模式');
+            });
+
+            // --- 2. Tab Navigation & Overview Card Quick-Jump ---
+            const navItems = document.querySelectorAll('.nav-item');
+            const appSections = document.querySelectorAll('.app-section');
+
+            const switchTab = (targetId) => {
+                navItems.forEach(item => {
+                    item.classList.toggle('active', item.getAttribute('data-target') === targetId);
+                });
+                appSections.forEach(sec => {
+                    sec.classList.toggle('active', sec.id === targetId);
+                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => switchTab(item.getAttribute('data-target')));
+            });
+
+            // Helper: Smoothly center any active button inside a horizontal scroll container
+            const centerButtonInScrollBar = (containerEl, btnEl) => {
+                if (!containerEl || !btnEl) return;
+                requestAnimationFrame(() => {
+                    const containerWidth = containerEl.clientWidth;
+                    const btnLeft = btnEl.offsetLeft;
+                    const btnWidth = btnEl.offsetWidth;
+                    const targetLeft = btnLeft - (containerWidth / 2) + (btnWidth / 2);
+                    containerEl.scrollTo({
+                        left: Math.max(0, targetLeft),
+                        behavior: 'smooth'
+                    });
+                });
+            };
+
+            // Overview day cards & Sticky Itinerary Day Filter Bar
+            const dayScrollFilters = document.getElementById('day-scroll-filters');
+            const filterBtns = dayScrollFilters ? dayScrollFilters.querySelectorAll('.filter-btn') : [];
+            const dayBlocks = document.querySelectorAll('.day-block');
+            const itineraryTopAnchor = document.getElementById('itinerary-top-anchor');
+
+            const filterDay = (dayId, shouldScrollToTop = false) => {
+                let activeBtn = null;
+                filterBtns.forEach(b => {
+                    const isMatch = b.getAttribute('data-day') === dayId;
+                    b.classList.toggle('active', isMatch);
+                    if (isMatch) activeBtn = b;
+                });
+
+                dayBlocks.forEach(block => {
+                    if (dayId === 'all' || block.id === dayId) {
+                        block.classList.remove('hidden');
+                        // Ensure the selected day's timeline body is expanded when filtering to a single day
+                        if (dayId !== 'all') {
+                            const bodyEl = document.getElementById(`${block.id}-body`);
+                            const bannerEl = block.querySelector('.day-banner');
+                            if (bodyEl) bodyEl.classList.remove('hidden');
+                            if (bannerEl) bannerEl.setAttribute('aria-expanded', 'true');
+                        }
+                    } else {
+                        block.classList.add('hidden');
+                    }
+                });
+
+                // Center the selected date button inside the sticky horizontal bar
+                if (activeBtn && dayScrollFilters) {
+                    centerButtonInScrollBar(dayScrollFilters, activeBtn);
+                }
+
+                // If user is scrolled down past the itinerary header, align smoothly to the top of the cards after DOM reflow
+                if (shouldScrollToTop && itineraryTopAnchor) {
+                    requestAnimationFrame(() => {
+                        const navOffset = window.innerWidth >= 768 ? 72 : 8;
+                        const anchorTop = itineraryTopAnchor.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                        if (window.pageYOffset > anchorTop) {
+                            window.scrollTo({ top: Math.max(0, anchorTop), behavior: 'smooth' });
+                        }
+                    });
+                }
+            };
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterDay(btn.getAttribute('data-day'), true);
+                });
+            });
+
+            document.querySelectorAll('[data-jump-day]').forEach(card => {
+                card.addEventListener('click', () => {
+                    const targetDay = card.getAttribute('data-jump-day');
+                    switchTab('view-itinerary');
+                    setTimeout(() => filterDay(targetDay, false), 60);
+                });
+            });
+
+            // --- 3. Collapsible Day Details & Expand/Collapse All ---
+            const dayBanners = document.querySelectorAll('.day-banner');
+            let allExpanded = true;
+            const btnToggleAllDays = document.getElementById('btn-toggle-all-days');
+
+            dayBanners.forEach(banner => {
+                banner.addEventListener('click', () => {
+                    const targetId = banner.getAttribute('data-collapse-target');
+                    const bodyEl = document.getElementById(targetId);
+                    if (!bodyEl) return;
+                    const isHidden = bodyEl.classList.toggle('hidden');
+                    banner.setAttribute('aria-expanded', String(!isHidden));
+                });
+            });
+
+            if (btnToggleAllDays) {
+                btnToggleAllDays.addEventListener('click', () => {
+                    allExpanded = !allExpanded;
+                    dayBanners.forEach(banner => {
+                        const bodyEl = document.getElementById(banner.getAttribute('data-collapse-target'));
+                        if (bodyEl) {
+                            bodyEl.classList.toggle('hidden', !allExpanded);
+                            banner.setAttribute('aria-expanded', String(allExpanded));
+                        }
+                    });
+                    btnToggleAllDays.textContent = allExpanded ? '收起全部日程' : '展開全部日程';
+                });
+            }
+
+            // --- 4. Prep Tab: Notion To-Do List & 22-Item Packing List & Souvenir List ---
+            const todoCheckboxes = document.querySelectorAll('#todo-list input[type="checkbox"]');
+            const todoProgressText = document.getElementById('todo-progress-text');
+            const defaultTodos = [0, 1, 3, 4, 8];
+            const savedTodos = safeStorage.get('jp_trip_todos', defaultTodos);
+
+            todoCheckboxes.forEach((cb, idx) => {
+                cb.checked = savedTodos.includes(idx);
+            });
+
+            const updateTodos = () => {
+                const checkedIds = [];
+                todoCheckboxes.forEach((cb, idx) => {
+                    if (cb.checked) checkedIds.push(idx);
+                    // Synchronize the Done / Not Started badge dynamically when user toggles checkbox
+                    const itemRow = cb.closest('.checklist-item');
+                    const statusBadge = itemRow ? itemRow.querySelector('.check-title-row .badge') : null;
+                    if (statusBadge) {
+                        statusBadge.textContent = cb.checked ? 'Done' : 'Not Started';
+                        statusBadge.classList.toggle('badge-done', cb.checked);
+                        statusBadge.classList.toggle('badge-todo', !cb.checked);
+                    }
+                });
+                todoProgressText.textContent = `${checkedIds.length}/${todoCheckboxes.length} 完成`;
+                safeStorage.set('jp_trip_todos', checkedIds);
+            };
+            todoCheckboxes.forEach(cb => cb.addEventListener('change', updateTodos));
+            updateTodos();
+
+            // Packing List (22 items)
+            const packCheckboxes = document.querySelectorAll('#packing-list input[type="checkbox"]');
+            const packProgressBar = document.getElementById('pack-progress-bar');
+            const packProgressText = document.getElementById('pack-progress-text');
+            const btnResetPack = document.getElementById('btn-reset-pack');
+
+            const savedPacks = safeStorage.get('jp_trip_packing_v2', []);
+            packCheckboxes.forEach((cb, idx) => {
+                cb.checked = savedPacks.includes(idx);
+            });
+
+            const updatePacking = () => {
+                const checkedIds = [];
+                packCheckboxes.forEach((cb, idx) => {
+                    if (cb.checked) checkedIds.push(idx);
+                });
+                const pct = Math.round((checkedIds.length / packCheckboxes.length) * 100) || 0;
+                packProgressBar.style.width = `${pct}%`;
+                packProgressText.textContent = `${pct}% (${checkedIds.length}/${packCheckboxes.length})`;
+                safeStorage.set('jp_trip_packing_v2', checkedIds);
+            };
+            packCheckboxes.forEach(cb => cb.addEventListener('change', updatePacking));
+            updatePacking();
+
+            if (btnResetPack) {
+                btnResetPack.addEventListener('click', () => {
+                    packCheckboxes.forEach(cb => { cb.checked = false; });
+                    updatePacking();
+                    showToast('✓ 已重設執野清單');
+                });
+            }
+
+            // Souvenir List (Pre-populated with "大阪機場 sweet" from Google Docs)
+            let souvenirs = safeStorage.get('jp_trip_souvenirs', [
+                { text: '大阪機場 sweet (文件必買手信)', done: false }
+            ]);
+            const souvenirInput = document.getElementById('souvenir-input');
+            const btnAddSouvenir = document.getElementById('btn-add-souvenir');
+            const souvenirListEl = document.getElementById('souvenir-list');
+
+            const renderSouvenirs = () => {
+                souvenirListEl.innerHTML = '';
+                souvenirs.forEach((item, idx) => {
+                    const safeText = escapeHtml(item.text);
+                    const row = document.createElement('div');
+                    row.className = 'checklist-item';
+                    row.innerHTML = `
+                        <input type="checkbox" ${item.done ? 'checked' : ''} aria-label="${safeText}">
+                        <span class="check-content">${safeText}</span>
+                        <button type="button" class="expense-del-btn" aria-label="刪除手信">✕</button>
+                    `;
+                    const cb = row.querySelector('input');
+                    cb.addEventListener('change', () => {
+                        souvenirs[idx].done = cb.checked;
+                        safeStorage.set('jp_trip_souvenirs', souvenirs);
+                        renderSouvenirs();
+                    });
+                    const delBtn = row.querySelector('button');
+                    delBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        souvenirs.splice(idx, 1);
+                        safeStorage.set('jp_trip_souvenirs', souvenirs);
+                        renderSouvenirs();
+                        showToast('✓ 已刪除手信項目');
+                    });
+                    souvenirListEl.appendChild(row);
+                });
+            };
+            btnAddSouvenir.addEventListener('click', () => {
+                const val = souvenirInput.value.trim();
+                if (!val) return;
+                souvenirs.push({ text: val, done: false });
+                souvenirInput.value = '';
+                safeStorage.set('jp_trip_souvenirs', souvenirs);
+                renderSouvenirs();
+                showToast('✓ 已新增手信項目');
+            });
+            renderSouvenirs();
+
+            // --- 5. Expense Tracker (100% Working Clear & Delete - No confirm() Blocking!) ---
+            // Sync with legacy 'expenses' key so any previously added items are also managed & cleared properly
+            let expenses = safeStorage.get('expenses', []);
+            let backupExpenses = null;
+
+            const inputDesc = document.getElementById('exp-desc');
+            const inputAmt = document.getElementById('exp-amt');
+            const inputFx = document.getElementById('fx-rate');
+            const btnAddExp = document.getElementById('btn-add-exp');
+            const btnClearExp = document.getElementById('btn-clear-exp');
+            const btnUndoExp = document.getElementById('btn-undo-exp');
+            const expListEl = document.getElementById('exp-list');
+            const expTotalEl = document.getElementById('exp-total');
+            const expTotalHkdEl = document.getElementById('exp-total-hkd');
+            const expCountEl = document.getElementById('exp-count');
+
+            const savedFx = safeStorage.get('jp_trip_fx', 0.052);
+            inputFx.value = savedFx;
+
+            const saveAndRenderExpenses = () => {
+                safeStorage.set('expenses', expenses);
+                const rate = parseFloat(inputFx.value) || 0.052;
+                safeStorage.set('jp_trip_fx', rate);
+
+                expListEl.innerHTML = '';
+                let totalYen = 0;
+
+                if (expenses.length === 0) {
+                    expListEl.innerHTML = `<div class="card-inner text-center text-secondary text-sm">目前尚無記帳紀錄，可於上方輸入或從下方固定支出快速加入。</div>`;
+                } else {
+                    expenses.forEach((item, index) => {
+                        const yen = Number(item.amt) || 0;
+                        totalYen += yen;
+                        const hkd = Math.round(yen * rate);
+
+                        const row = document.createElement('div');
+                        row.className = 'expense-item';
+                        row.innerHTML = `
+                            <div>
+                                <div class="font-bold">${escapeHtml(item.desc)}</div>
+                                <div class="text-xs text-secondary">約 HK$${hkd.toLocaleString()}</div>
+                            </div>
+                            <div style="display:flex; align-items:center;">
+                                <span class="font-bold" style="font-size:1.05rem;">¥${yen.toLocaleString()}</span>
+                                <button type="button" class="expense-del-btn" title="刪除此筆紀錄">✕ 刪除</button>
+                            </div>
+                        `;
+                        row.querySelector('.expense-del-btn').addEventListener('click', () => {
+                            const removed = expenses.splice(index, 1)[0];
+                            saveAndRenderExpenses();
+                            showToast(`✓ 已刪除「${removed.desc}」`);
+                        });
+                        expListEl.appendChild(row);
+                    });
+                }
+
+                expCountEl.textContent = expenses.length;
+                expTotalEl.textContent = totalYen.toLocaleString();
+                expTotalHkdEl.textContent = Math.round(totalYen * rate).toLocaleString();
+            };
+
+            const addExpenseItem = (desc, amt) => {
+                if (!desc || !(amt > 0)) {
+                    showToast('請輸入有效的項目名稱與金額');
+                    return;
+                }
+                expenses.push({ desc, amt: Math.round(amt) });
+                btnUndoExp.classList.add('hidden');
+                saveAndRenderExpenses();
+                showToast(`✓ 已加入記帳：${desc} (¥${Math.round(amt).toLocaleString()})`);
+            };
+
+            btnAddExp.addEventListener('click', () => {
+                addExpenseItem(inputDesc.value.trim(), parseFloat(inputAmt.value));
+                inputDesc.value = '';
+                inputAmt.value = '';
+            });
+
+            inputAmt.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') btnAddExp.click();
+            });
+
+            inputFx.addEventListener('input', saveAndRenderExpenses);
+
+            // Instant, Non-Blocked Clear All with One-Tap Undo Support
+            btnClearExp.addEventListener('click', () => {
+                if (expenses.length === 0) {
+                    showToast('目前沒有記帳紀錄可清空');
+                    return;
+                }
+                backupExpenses = [...expenses];
+                expenses = [];
+                try { window.localStorage.removeItem('expenses'); } catch (e) {}
+                saveAndRenderExpenses();
+                btnUndoExp.classList.remove('hidden');
+                showToast('✓ 已徹底清空所有記帳紀錄！');
+            });
+
+            btnUndoExp.addEventListener('click', () => {
+                if (backupExpenses && backupExpenses.length > 0) {
+                    expenses = [...backupExpenses];
+                    backupExpenses = null;
+                    btnUndoExp.classList.add('hidden');
+                    saveAndRenderExpenses();
+                    showToast('↩ 已復原剛才清空的記帳紀錄');
+                }
+            });
+
+            // Quick-add buttons from known fixed expenses
+            document.querySelectorAll('.quick-exp-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const desc = btn.getAttribute('data-desc');
+                    const amt = parseFloat(btn.getAttribute('data-amt'));
+                    addExpenseItem(desc, amt);
+                });
+            });
+
+            saveAndRenderExpenses();
+
+            // --- 6. Quick Notes with Real-time Auto-save Verification ---
+            const quickNotesArea = document.getElementById('quick-notes');
+            const noteStatus = document.getElementById('note-status');
+            const btnCopyNotes = document.getElementById('btn-copy-notes');
+            const btnClearNotes = document.getElementById('btn-clear-notes');
+
+            try {
+                const rawNotes = window.localStorage.getItem('quick-notes');
+                if (rawNotes !== null) quickNotesArea.value = rawNotes;
+            } catch (e) {}
+
+            let noteTimer = null;
+            quickNotesArea.addEventListener('input', () => {
+                noteStatus.textContent = '儲存中...';
+                noteStatus.style.opacity = '1';
+                clearTimeout(noteTimer);
+                noteTimer = setTimeout(() => {
+                    try { window.localStorage.setItem('quick-notes', quickNotesArea.value); } catch (e) {}
+                    noteStatus.textContent = '✓ 已自動儲存';
+                }, 400);
+            });
+
+            // Universal Clipboard Helper (Works in iFrame & Mobile Browsers)
+            const copyText = (text, label = '內容') => {
+                if (!text) {
+                    showToast('沒有可複製的內容');
+                    return;
+                }
+                const fallbackCopy = () => {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    try {
+                        document.execCommand('copy');
+                        showToast(`✓ 已複製：${label}`);
+                    } catch (err) {
+                        showToast('複製失敗，請手動選取複製');
+                    }
+                    document.body.removeChild(ta);
+                };
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showToast(`✓ 已複製：${label}`);
+                    }).catch(fallbackCopy);
+                } else {
+                    fallbackCopy();
+                }
+            };
+
+            document.querySelectorAll('[data-copy]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const text = btn.getAttribute('data-copy');
+                    copyText(text, text);
+                });
+            });
+
+            btnCopyNotes.addEventListener('click', () => copyText(quickNotesArea.value, '隨身筆記'));
+            btnClearNotes.addEventListener('click', () => {
+                quickNotesArea.value = '';
+                try { window.localStorage.setItem('quick-notes', ''); } catch (e) {}
+                noteStatus.textContent = '✓ 已清空並儲存';
+                noteStatus.style.opacity = '1';
+                showToast('✓ 已清空隨身筆記');
+            });
+
+            // --- 6B. Comprehensive Categorized Google Maps Place Directory ---
+            const defaultPlacesData = [
+                // 🍁 廣島市區
+                { region: '廣島市區', name: '廣島機場 (Hiroshima Airport)', query: '廣島機場', cat: '交通', note: 'Day 1 抵達｜出境後往 2 號巴士站搭機場巴士' },
+                { region: '廣島市區', name: 'JR 廣島站 (新幹線口／北口)', query: 'JR廣島站 新幹線口', cat: '交通', note: 'Day 1-4 核心交通樞紐｜機場巴士終點站' },
+                { region: '廣島市區', name: '大和魯內酒店 廣島站前 (Daiwa Roynet Hotel Hiroshima-Ekimae)', query: 'Daiwa Roynet Hotel Hiroshima-Ekimae', cat: '酒店', note: 'Day 1-3 廣島住宿｜廣島站北口步行 5 分鐘' },
+                { region: '廣島市區', name: 'youme Mart Futabanosato (ゆめマート 二葉の里)', query: 'youme Mart Futabanosato', cat: '購物', note: 'Day 1 超市 (09:00-00:00)｜買翌日早餐' },
+                { region: '廣島市區', name: 'Lawson 廣島站北口店', query: 'Lawson 廣島駅北口', cat: '購物', note: '酒店樓下便利店' },
+                { region: '廣島市區', name: '7-Eleven 廣島站北口店', query: '7-Eleven 廣島駅北口', cat: '購物', note: '酒店樓下便利店' },
+                { region: '廣島市區', name: '八丁堀站 (廣島電鐵)', query: '八丁堀站 廣島', cat: '交通', note: 'Day 1 搭廣電 1、2、6 號線下車處 (¥240)' },
+                { region: '廣島市區', name: '廣島本通商店街 (Hondori)', query: '廣島本通商店街', cat: '購物', note: 'Day 1 & Day 2 市中心核心行街區' },
+                { region: '廣島市區', name: '廣島 PARCO 本館', query: '廣島PARCO 本館', cat: '購物', note: 'Day 1 八丁堀必逛潮流商場' },
+                { region: '廣島市區', name: '廣島 PARCO 新館', query: '廣島PARCO 新館', cat: '購物', note: '2/F FREAK\'S STORE、3/F MIZUNO' },
+                { region: '廣島市區', name: 'BEAMS 廣島 (ビームス 広島)', query: 'BEAMS 廣島', cat: '購物', note: 'Day 1 本通潮流選物店' },
+                { region: '廣島市區', name: 'ref. (レフ 広島)', query: 'ref. 廣島 袋町', cat: '購物', note: 'Day 1 袋町人氣設計選品店' },
+                { region: '廣島市區', name: 'THE NORTH FACE STANDARD 廣島', query: 'THE NORTH FACE STANDARD 廣島', cat: '購物', note: 'Day 1 戶外機能潮流專門店' },
+                { region: '廣島市區', name: '廣島燒 麗ちゃん (麗ちゃん)', query: '廣島燒 麗ちゃん ekie', cat: '美食', note: 'Day 1 晚餐候選｜廣島站 ekie 1F 人氣廣島燒' },
+                { region: '廣島市區', name: '廣島燒 電光石火 (廣島站店)', query: '廣島燒 電光石火 廣島駅', cat: '美食', note: 'Day 1 晚餐候選｜立體圓頂蛋包廣島燒' },
+                { region: '廣島市區', name: '原爆ドーム前站 (廣島電鐵)', query: '原爆ドーム前駅', cat: '交通', note: 'Day 2 廣電 2 號線直達和平公園門口' },
+                { region: '廣島市區', name: '廣島和平紀念資料館', query: '廣島和平紀念資料館', cat: '景點', note: 'Day 2 已預約 15:00 入場 (08:30-18:00)' },
+                { region: '廣島市區', name: '原爆圓頂館 (Atomic Bomb Dome)', query: '原爆圓頂館', cat: '景點', note: 'Day 2 世界文化遺產 (外觀 24 小時開放)' },
+                { region: '廣島市區', name: '廣島和平紀念公園 (平和之燈 / 原爆之子雕像)', query: '廣島和平紀念公園', cat: '景點', note: 'Day 2 漫步參觀紀念碑與平和之燈' },
+                { region: '廣島市區', name: 'Animate 廣島 (アニメイト広島)', query: 'Animate 廣島', cat: '購物', note: 'Day 2 傍晚市中心動漫周邊行街' },
+                { region: '廣島市區', name: 'BOOKOFF SUPER BAZAAR 廣島大手町店', query: 'BOOKOFF SUPER BAZAAR 廣島大手町', cat: '購物', note: 'Day 2 傍晚尋寶二手動漫／服飾／精品' },
+                { region: '廣島市區', name: 'SOGO 廣島店 (そごう広島店)', query: 'SOGO 廣島店', cat: '購物', note: 'Day 2 市中心後備商場' },
+                { region: '廣島市區', name: 'Pacela 廣島 (基町クレド・パセーラ)', query: 'Pacela 廣島', cat: '購物', note: 'Day 2 市中心後備商場' },
+                { region: '廣島市區', name: '鳥貴族 廣島本通店', query: '鳥貴族 廣島本通', cat: '美食', note: 'Day 2 市中心串燒晚餐' },
+
+                // ⛩️ 宮島・嚴島
+                { region: '宮島・嚴島', name: 'JR 宮島口站', query: 'JR宮島口站', cat: '交通', note: 'Day 2 搭 JR 山陽本線 28 分鐘抵達' },
+                { region: '宮島・嚴島', name: 'JR 西日本宮島渡輪 乘船處', query: 'JR西日本宮島フェリー乗り場', cat: '交通', note: 'Day 2 憑 JR Pass 搭船 10 分鐘往宮島' },
+                { region: '宮島・嚴島', name: '嚴島神社 & 海上大鳥居', query: '嚴島神社', cat: '景點', note: 'Day 2 09:35-12:00 (10:27 潮位 142)' },
+                { region: '宮島・嚴島', name: '大國神社 (大國社 宮島)', query: '大國神社 宮島', cat: '景點', note: 'Day 2 嚴島神社境內／周邊參拜' },
+                { region: '宮島・嚴島', name: '宮島表參道商店街', query: '宮島表參道商店街', cat: '購物', note: 'Day 2 手信、小食與限定店集中地 (約 09:00-17:00)' },
+                { region: '宮島・嚴島', name: 'BEAMS JAPAN 宮島 (宮島 Beams)', query: 'BEAMS JAPAN 宮島', cat: '購物', note: 'Day 2 必買宮島限定天藍色貓貓周邊' },
+                { region: '宮島・嚴島', name: 'Starbucks Coffee 嚴島表參道店', query: 'Starbucks 嚴島表參道店', cat: '美食', note: 'Day 2 必睇宮島限定杯' },
+                { region: '宮島・嚴島', name: '牡蠣屋 (Kakiya 宮島)', query: '牡蠣屋 宮島', cat: '美食', note: 'Day 2 午餐食廣島蠔名店 (10:00-18:00)' },
+                { region: '宮島・嚴島', name: 'GEBURA (ゲブラ 宮島)', query: 'GEBURA 宮島', cat: '美食', note: 'Day 2 必飲廣島檸檬梳打 (10:00-17:00)' },
+                { region: '宮島・嚴島', name: '紅葉堂 本店 (炸紅葉饅頭)', query: '紅葉堂本店 宮島', cat: '美食', note: 'Day 2 必食即炸紅葉饅頭 (09:00-17:30)' },
+
+                // 🍑 岡山・倉敷
+                { region: '岡山・倉敷', name: 'JR 岡山站', query: 'JR岡山站', cat: '交通', note: 'Day 3 新幹線轉乘伯備線／山陽本線樞紐' },
+                { region: '岡山・倉敷', name: 'JR 倉敷站 (南口)', query: 'JR倉敷站', cat: '交通', note: 'Day 3 步行前往美觀地區起點' },
+                { region: '岡山・倉敷', name: '倉敷美觀地區', query: '倉敷美觀地區', cat: '景點', note: 'Day 3 09:39-13:30 漫步白壁柳樹古街 (店鋪約 09:00-17:00)' },
+                { region: '岡山・倉敷', name: 'Asobi gocoro 倉敷 (あそびごころ 扭蛋)', query: 'Asobi gocoro 倉敷', cat: '購物', note: 'Day 3 倉敷站附近扭蛋店' },
+                { region: '岡山・倉敷', name: 'Ario 倉敷 (アリオ倉敷)', query: 'Ario 倉敷', cat: '購物', note: 'Day 3 倉敷站北口大型商場' },
+                { region: '岡山・倉敷', name: 'MITSUI OUTLET PARK 倉敷', query: 'MITSUI OUTLET PARK 倉敷', cat: '購物', note: 'Day 3 倉敷站北口 Outlet' },
+                { region: '岡山・倉敷', name: '焼肉 和牛のたか 倉敷本店', query: '焼肉 和牛のたか 倉敷本店', cat: '美食', note: 'Day 3 已預約 13:00 和牛燒肉午飯' },
+                { region: '岡山・倉敷', name: '永旺夢樂城 岡山 (AEON Mall 岡山)', query: 'AEON Mall 岡山', cat: '購物', note: 'Day 3 17:30-21:00 行街與晚餐 (由岡山站地下街直通)' },
+                { region: '岡山・倉敷', name: 'Sun Station Terrace 岡山 (さんすて岡山)', query: 'Sun Station Terrace 岡山', cat: '購物', note: 'Day 3 岡山站直結商場' },
+                { region: '岡山・倉敷', name: '岡山一番街', query: '岡山一番街', cat: '購物', note: 'Day 3 岡山站地下街商場' },
+                { region: '岡山・倉敷', name: '岡山表町商店街', query: '岡山表町商店街', cat: '購物', note: 'Day 3 傳統商店街 (如返岡山時間尚早可逛)' },
+
+                // ⛩️ 京都・伏見
+                { region: '京都・伏見', name: 'JR 京都站', query: 'JR京都站', cat: '交通', note: 'Day 4 由大阪站搭新快速 29 分鐘抵達，轉乘 8-10 月台奈良線' },
+                { region: '京都・伏見', name: 'JR 稻荷站 (Inari Station)', query: 'JR稻荷站', cat: '交通', note: 'Day 4 務必搭普通列車 (Local)，出閘即達神社正門' },
+                { region: '京都・伏見', name: '伏見稻荷大社 (千本鳥居)', query: '伏見稻荷大社', cat: '景點', note: 'Day 4 13:45-16:15 參拜本殿與千本鳥居 (24小時開放)' },
+                { region: '京都・伏見', name: '伏見稻荷 四ツ辻 (半山腰觀景點)', query: '四ツ辻 伏見稻荷', cat: '景點', note: 'Day 4 順步道爬升 15-20 分鐘俯瞰京都市景與無人鳥居' },
+
+                // 🏙️ 大阪・梅田
+                { region: '大阪・梅田', name: 'JR 新大阪站', query: '新大阪站', cat: '交通', note: 'Day 4 山陽新幹線抵達站，轉乘 JR 東海道線往大阪站' },
+                { region: '大阪・梅田', name: 'JR 大阪站 (櫻橋口／西口／中央南口)', query: 'JR大阪站', cat: '交通', note: 'Day 4-7 大阪核心樞紐' },
+                { region: '大阪・梅田', name: 'JR 大阪站 うめきた地下口 (21・22號月台)', query: 'JR大阪駅 うめきた地下口', cat: '交通', note: 'Day 7 12:18 搭乘 Haruka 23 號往關西機場專用月台' },
+                { region: '大阪・梅田', name: 'Hotel Intergate Osaka Umeda (大阪梅田國際之門酒店)', query: 'Hotel Intergate Osaka Umeda', cat: '酒店', note: 'Day 4-7 大阪住宿｜JR 大阪站櫻橋口／西口步行 5-8 分鐘' },
+                { region: '大阪・梅田', name: 'KITTE 大阪', query: 'KITTE 大阪', cat: '購物', note: 'Day 4 JR 大阪站西口直結新商場／早午餐' },
+                { region: '大阪・梅田', name: '阪急三番街 (Hankyu Sanbangai)', query: '阪急三番街', cat: '購物', note: 'Day 6 Chiikawa Land、Kiddy Land 及美食街' },
+                { region: '大阪・梅田', name: 'Grand Front Osaka (グランフロント大阪)', query: 'Grand Front Osaka', cat: '購物', note: 'Day 6 南館 3F Beams、5F TNF & Montbell；北館 2-4F MUJI' },
+                { region: '大阪・梅田', name: '味の牛たん喜助 梅田店 (Grand Front 南館 7F)', query: '味の牛たん喜助 梅田', cat: '美食', note: 'Day 6 仙台牛舌飯名店' },
+                { region: '大阪・梅田', name: 'ひつまぶし名古屋備長 Grand Front 大阪店', query: 'ひつまぶし名古屋備長 Grand Front', cat: '美食', note: 'Day 6 南館 7F 炭燒鰻魚飯三吃' },
+                { region: '大阪・梅田', name: 'Rojiura Curry SAMURAI. Grand Front 大阪店', query: 'Rojiura Curry SAMURAI Grand Front Osaka', cat: '美食', note: 'Day 6 南館 7F 北海道湯咖哩' },
+                { region: '大阪・梅田', name: 'Qu\'il fait bon (キル フェ ボン Grand Front 大阪店)', query: 'Qu\'il fait bon Grand Front Osaka', cat: '美食', note: 'Day 6 南館 2F 超人氣水果撻 (可外賣回酒店)' },
+                { region: '大阪・梅田', name: 'Yodobashi Camera 友都八喜梅田', query: 'Yodobashi Camera 梅田', cat: '購物', note: 'Day 6 4&5F 扭蛋專區、1&5&8F 餐廳' },
+                { region: '大阪・梅田', name: 'LINKS UMEDA (リンクス梅田)', query: 'LINKS UMEDA', cat: '購物', note: 'Day 6 2F Ainz & Tulpe 藥妝、扭蛋' },
+                { region: '大阪・梅田', name: 'LUCUA & LUCUA 1100 (ルクア イーレ)', query: 'LUCUA 1100', cat: '購物', note: 'Day 6 SHIRO、@cosme OSAKA、伊右衛門 Cafe' },
+                { region: '大阪・梅田', name: 'しゃぶ禅 梅田店 (Shabuzen)', query: 'しゃぶ禅 梅田店', cat: '美食', note: 'Day 6 梅田涮涮鍋／壽喜燒午餐' },
+                { region: '大阪・梅田', name: 'grenier 梅田店 (グルニエ 阪急梅田店)', query: 'grenier 梅田店', cat: '美食', note: 'Day 6 必食烤布蕾千層酥小食' },
+                { region: '大阪・梅田', name: '阪急百貨 梅田本店', query: '阪急百貨 梅田本店', cat: '購物', note: 'Day 6 2F 國際名店、B1/F 最強手信街' },
+                { region: '大阪・梅田', name: '大丸梅田店 (Daimaru Umeda)', query: '大丸梅田店', cat: '購物', note: 'Day 6 JR 大阪中央南口百貨' },
+                { region: '大阪・梅田', name: '阪神百貨 梅田本店', query: '阪神百貨 梅田本店', cat: '購物', note: 'Day 6 JR 大阪中央南口美食與百貨' },
+                { region: '大阪・梅田', name: 'Alpen OSAKA (關西首家旗艦店)', query: 'Alpen OSAKA 茶屋町', cat: '購物', note: 'Day 6 茶屋町 1-32 YANMAR B2～4F 全6層運動戶外旗艦店' },
+                { region: '大阪・梅田', name: 'とんかつ ニューベイブ 豊崎 (New Babe)', query: 'とんかつ ニューベイブ 豊崎', cat: '美食', note: 'Day 6 頂級炸豬排晚餐推薦' },
+                { region: '大阪・梅田', name: 'Whity 梅田 (うめだ地下街)', query: 'Whity 梅田', cat: '美食', note: 'Day 7 09:30-11:30 退房後享用早午餐' },
+
+                // 🦀 心齋橋・道頓堀・難波
+                { region: '心齋橋・道頓堀・難波', name: '心齋橋站 / 難波站 (御堂筋線)', query: '心齋橋站', cat: '交通', note: 'Day 4 & Day 5 由梅田搭御堂筋線直達 (¥240)' },
+                { region: '心齋橋・道頓堀・難波', name: '#FR2 OSAKA', query: 'FR2 心齋橋', cat: '購物', note: 'Day 4 & 5 心齋橋街頭潮牌' },
+                { region: '心齋橋・道頓堀・難波', name: 'HUMAN MADE 1928 OSAKA', query: 'HUMAN MADE 1928 OSAKA 心齋橋', cat: '購物', note: 'Day 4 & 5 NIGO 潮流名店' },
+                { region: '心齋橋・道頓堀・難波', name: '心齋橋 PARCO', query: '心齋橋 PARCO', cat: '購物', note: 'Day 4 & 5 Chiikawa 專門店 & 5/F R.O.F.J BY JUMP' },
+                { region: '心齋橋・道頓堀・難波', name: '橙街 (Orange Street / 立花通り)', query: '大阪 橙街 Orange Street', cat: '購物', note: 'Day 4 & 5 堀江潮流選品街' },
+                { region: '心齋橋・道頓堀・難波', name: 'DEAL DESIGN 大阪心齋橋店', query: 'DEAL DESIGN 大阪 心齋橋', cat: '購物', note: 'Day 4 銀飾專門店' },
+                { region: '心齋橋・道頓堀・難波', name: '蟹道樂 網元本館 (かに道楽 網元本館)', query: 'かに道楽 網元本館', cat: '美食', note: 'Day 4 已訂座 20:30 螃蟹會席晚飯' },
+                { region: '心齋橋・道頓堀・難波', name: 'AEON FOOD STYLE Yotsubashi Store (四橋店)', query: 'AEON FOOD STYLE Yotsubashi Store', cat: '購物', note: 'Day 4 24小時超市 (注意地鐵 00:00 尾班車)' },
+                { region: '心齋橋・道頓堀・難波', name: '魚心 南店 (難波)', query: '魚心 難波', cat: '美食', note: 'Day 5 晚餐候選｜大件厚切壽司 (可於 Google Map 訂位)' },
+                { region: '心齋橋・道頓堀・難波', name: '野口太郎 (大阪)', query: '野口太郎 大阪', cat: '美食', note: 'Day 5 晚餐候選' },
+                { region: '心齋橋・道頓堀・難波', name: '九州拉麵龜王 難波NGK店', query: '九州らーめん亀王 難波NGK店', cat: '美食', note: 'Day 5 晚餐候選｜舊地重遊拉麵名店' },
+                { region: '心齋橋・道頓堀・難波', name: '燒肉力丸 難波道頓堀店', query: '燒肉力丸 難波道頓堀店', cat: '美食', note: 'Day 5 晚餐候選｜炭火燒肉放題' },
+                { region: '心齋橋・道頓堀・難波', name: '鶏白湯らーめん・つけ麺 金麦 難波店', query: '鶏白湯らーめん 金麦 難波店', cat: '美食', note: 'Day 5 晚餐候選｜營業至 22:00' },
+                { region: '心齋橋・道頓堀・難波', name: '鶏白湯味噌ラーメン 猿のすけ', query: '鶏白湯味噌ラーメン 猿のすけ', cat: '美食', note: 'Day 5 晚餐／宵夜候選｜營業至凌晨 04:00' },
+
+                // 🛍️ 臨空城・關西機場
+                { region: '臨空城・關西機場', name: 'JR 日根野站 (關空快速解聯站)', query: '日根野站', cat: '交通', note: 'Day 5 必乘第 1〜4 號車廂，切勿坐 5〜8 號車廂' },
+                { region: '臨空城・關西機場', name: 'JR 臨空城站 (Rinku-Town Station)', query: '臨空城站', cat: '交通', note: 'Day 5 走 2 號出口行人天橋 6-8 分鐘直達 Outlet' },
+                { region: '臨空城・關西機場', name: 'Rinku Premium Outlets (臨空城 Outlet)', query: 'Rinku Premium Outlets', cat: '購物', note: 'Day 5 小美醬掃貨日 1 (10:00-20:00)' },
+                { region: '臨空城・關西機場', name: '關西國際機場 (KIX)', query: '關西國際機場', cat: '交通', note: 'Day 7 買大阪機場 sweet 手信 & 15:15 UO851 返港' },
+
+                // ✈️ 香港出發
+                { region: '香港出發', name: '錦上路站 (龍運巴士 A36)', query: '錦上路站', cat: '交通', note: 'Day 1 S 出發｜05:10 開出，車程約 37 分鐘' },
+                { region: '香港出發', name: '油塘站 (城巴 N26)', query: '油塘站', cat: '交通', note: 'Day 1 C 出發｜05:00 開出，車程約 1 小時' },
+                { region: '香港出發', name: '香港國際機場 T2 (HKG)', query: '香港國際機場 T2', cat: '交通', note: 'Day 1 06:00 抵達食早餐，09:05 UO822 起飛' }
+            ];
+
+            let customPlaces = safeStorage.get('jp_trip_custom_places', []);
+            let activeRegionFilter = 'all';
+
+            const placesContainer = document.getElementById('places-directory-container');
+            const placesTotalCountEl = document.getElementById('places-total-count');
+            const placeSearchInput = document.getElementById('place-search-input');
+            const regionScrollFilters = document.getElementById('region-scroll-filters');
+            const regionBtns = regionScrollFilters ? regionScrollFilters.querySelectorAll('.filter-btn') : [];
+
+            const regionOrder = [
+                { key: '廣島市區', icon: '🍁 廣島市區（廣島站・八丁堀・本通・和平公園）' },
+                { key: '宮島・嚴島', icon: '⛩️ 宮島・嚴島地區' },
+                { key: '岡山・倉敷', icon: '🍑 岡山・倉敷地區' },
+                { key: '京都・伏見', icon: '⛩️ 京都・伏見稻荷地區' },
+                { key: '大阪・梅田', icon: '🏙️ 大阪・梅田商圈' },
+                { key: '心齋橋・道頓堀・難波', icon: '🦀 大阪・心齋橋・道頓堀・難波・四橋' },
+                { key: '臨空城・關西機場', icon: '🛍️ 臨空城 Outlet & 關西國際機場' },
+                { key: '香港出發', icon: '✈️ 香港出發及機場交通' }
+            ];
+
+            const renderPlacesDirectory = () => {
+                if (!placesContainer) return;
+                const allPlaces = [...defaultPlacesData, ...customPlaces];
+                if (placesTotalCountEl) placesTotalCountEl.textContent = allPlaces.length;
+
+                const keyword = (placeSearchInput ? placeSearchInput.value : '').trim().toLowerCase();
+                placesContainer.innerHTML = '';
+                let matchedTotal = 0;
+
+                regionOrder.forEach(regObj => {
+                    if (activeRegionFilter !== 'all' && activeRegionFilter !== regObj.key) return;
+
+                    const itemsInRegion = allPlaces.filter(p => {
+                        if (p.region !== regObj.key) return false;
+                        if (!keyword) return true;
+                        return (
+                            p.name.toLowerCase().includes(keyword) ||
+                            (p.note && p.note.toLowerCase().includes(keyword)) ||
+                            (p.cat && p.cat.toLowerCase().includes(keyword)) ||
+                            p.region.toLowerCase().includes(keyword)
+                        );
+                    });
+
+                    if (itemsInRegion.length === 0) return;
+                    matchedTotal += itemsInRegion.length;
+
+                    const blockEl = document.createElement('div');
+                    blockEl.className = 'place-region-block';
+
+                    const headerEl = document.createElement('div');
+                    headerEl.className = 'place-region-header';
+                    headerEl.innerHTML = `
+                        <span>${regObj.icon}</span>
+                        <span class="badge">${itemsInRegion.length} 個地點</span>
+                    `;
+                    blockEl.appendChild(headerEl);
+
+                    const gridEl = document.createElement('div');
+                    gridEl.className = 'place-grid';
+
+                    itemsInRegion.forEach(place => {
+                        const encodedQuery = encodeURIComponent(place.query || place.name);
+                        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
+                        const safeName = escapeHtml(place.name);
+                        const safeCat = escapeHtml(place.cat || '地點');
+                        const safeNote = place.note ? escapeHtml(place.note) : '';
+
+                        const itemEl = document.createElement('div');
+                        itemEl.className = 'place-item';
+                        itemEl.innerHTML = `
+                            <div>
+                                <div class="place-item-top">
+                                    <div class="place-item-name">${safeName}</div>
+                                    <span class="place-cat-tag">${safeCat}</span>
+                                </div>
+                                ${safeNote ? `<div class="place-item-note">${safeNote}</div>` : ''}
+                            </div>
+                            <div class="place-item-actions">
+                                <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="map-link">
+                                    <svg class="icon-sm"><use href="#icon-location"></use></svg> Google Maps
+                                </a>
+                                <button type="button" class="copy-btn btn-copy-place">
+                                    <svg class="icon-sm"><use href="#icon-copy"></use></svg> 複製名稱
+                                </button>
+                                ${place.isCustom ? `<button type="button" class="expense-del-btn btn-del-place" style="margin-left:auto;">✕</button>` : ''}
+                            </div>
+                        `;
+
+                        itemEl.querySelector('.btn-copy-place').addEventListener('click', () => {
+                            copyText(place.query || place.name, place.name);
+                        });
+
+                        if (place.isCustom) {
+                            const delBtn = itemEl.querySelector('.btn-del-place');
+                            if (delBtn) {
+                                delBtn.addEventListener('click', () => {
+                                    customPlaces = customPlaces.filter(cp => cp.id !== place.id);
+                                    safeStorage.set('jp_trip_custom_places', customPlaces);
+                                    renderPlacesDirectory();
+                                    showToast(`✓ 已移除自訂地點：${place.name}`);
+                                });
+                            }
+                        }
+
+                        gridEl.appendChild(itemEl);
+                    });
+
+                    blockEl.appendChild(gridEl);
+                    placesContainer.appendChild(blockEl);
+                });
+
+                if (matchedTotal === 0) {
+                    placesContainer.innerHTML = `<div class="card-inner text-center text-secondary text-sm mt-2">找不到符合「${placeSearchInput.value}」的地點，請嘗試其他關鍵字或切換至「全部地區」。</div>`;
+                }
+            };
+
+            regionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeRegionFilter = btn.getAttribute('data-region');
+                    regionBtns.forEach(b => b.classList.toggle('active', b === btn));
+                    centerButtonInScrollBar(regionScrollFilters, btn);
+                    renderPlacesDirectory();
+                });
+            });
+
+            if (placeSearchInput) {
+                placeSearchInput.addEventListener('input', renderPlacesDirectory);
+            }
+
+            const btnAddCustomPlace = document.getElementById('btn-add-custom-place');
+            const customPlaceRegion = document.getElementById('custom-place-region');
+            const customPlaceName = document.getElementById('custom-place-name');
+            const customPlaceNote = document.getElementById('custom-place-note');
+
+            if (btnAddCustomPlace) {
+                btnAddCustomPlace.addEventListener('click', () => {
+                    const nameVal = customPlaceName.value.trim();
+                    if (!nameVal) {
+                        showToast('請輸入地點名稱');
+                        return;
+                    }
+                    const regionVal = customPlaceRegion.value;
+                    const noteVal = customPlaceNote.value.trim() || '自訂新增地點';
+                    customPlaces.push({
+                        id: Date.now(),
+                        region: regionVal,
+                        name: nameVal,
+                        query: nameVal,
+                        cat: '自訂',
+                        note: noteVal,
+                        isCustom: true
+                    });
+                    safeStorage.set('jp_trip_custom_places', customPlaces);
+                    customPlaceName.value = '';
+                    customPlaceNote.value = '';
+                    renderPlacesDirectory();
+                    showToast(`✓ 已加入「${nameVal}」至 ${regionVal}`);
+                });
+            }
+
+            renderPlacesDirectory();
+
+            // --- 7. Phrasebook Full-Screen Zoom Modal ---
+            const phraseModal = document.getElementById('phrase-modal');
+            const modalZh = document.getElementById('modal-zh');
+            const modalJp = document.getElementById('modal-jp');
+            const modalRo = document.getElementById('modal-ro');
+            const btnCloseModal = document.getElementById('btn-close-modal');
+
+            document.querySelectorAll('.phrase-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    modalZh.textContent = card.getAttribute('data-zh');
+                    modalJp.textContent = card.getAttribute('data-jp');
+                    modalRo.textContent = card.getAttribute('data-ro');
+                    phraseModal.classList.add('open');
+                });
+            });
+
+            const closePhraseModal = () => phraseModal.classList.remove('open');
+            btnCloseModal.addEventListener('click', closePhraseModal);
+            phraseModal.addEventListener('click', (e) => {
+                if (e.target === phraseModal) closePhraseModal();
+            });
+
+            // --- 8. Share Button & Back to Top ---
+            const btnShare = document.getElementById('btn-share');
+            btnShare.addEventListener('click', async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: '⛩️ 日本 － 廣島 ‧ 岡山 ‧ 大阪 7日遊',
+                            text: '2026/10/19 - 10/25 廣島・岡山・大阪 完整行程表',
+                            url: window.location.href
+                        });
+                    } catch (err) {}
+                } else {
+                    copyText(window.location.href, '行程網頁連結');
+                }
+            });
+
+            const btnBackTop = document.getElementById('btn-back-top');
+            window.addEventListener('scroll', () => {
+                btnBackTop.classList.toggle('visible', window.scrollY > 280);
+            });
+            btnBackTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
